@@ -1,0 +1,552 @@
+[
+  {
+    "brand": "Yıldız Entegre",
+    "brandSlug": "yildiz",
+    "name": "MDFlam / Suntalam",
+    "slug": "mdf-mdflam-suntalam",
+    "category": "MDF & Panel",
+    "image": "images/yildiz-mdf/kristal-oniks-yt-z75-render.jpg",
+    "count": 140,
+    "description": ""
+  },
+  {
+    "brand": "Yıldız Entegre",
+    "brandSlug": "yildiz",
+    "name": "Kapak Panel Mat",
+    "slug": "mdf-kapak-panel",
+    "category": "MDF & Panel",
+    "image": "images/yildiz-mdf/duru-mermer-mat-10k-render.jpg",
+    "count": 46,
+    "description": ""
+  },
+  {
+    "brand": "Yıldız Entegre",
+    "brandSlug": "yildiz",
+    "name": "Lak Panel Super Gloss",
+    "slug": "mdf-lak-panel",
+    "category": "MDF & Panel",
+    "image": "images/yildiz-mdf/sgl-salda-bej-sgl-z76-render.jpg",
+    "count": 42,
+    "description": ""
+  },
+  {
+    "brand": "Yıldız Entegre",
+    "brandSlug": "yildiz",
+    "name": "Lak Panel Superior Matt",
+    "slug": "mdf-lak-panel",
+    "category": "MDF & Panel",
+    "image": "images/yildiz-mdf/salda-bej-lak-panel-superior-matt-sml-z76-render.jpg",
+    "count": 29,
+    "description": ""
+  },
+  {
+    "brand": "Yıldız Entegre",
+    "brandSlug": "yildiz",
+    "name": "Kapak Panel High Gloss",
+    "slug": "mdf-kapak-panel",
+    "category": "MDF & Panel",
+    "image": "images/yildiz-mdf/hg-beyaz-hg-068-texture.jpg",
+    "count": 26,
+    "description": ""
+  },
+  {
+    "brand": "Yıldız Entegre",
+    "brandSlug": "yildiz",
+    "name": "Boyalı Panel",
+    "slug": "mdf-boyali-panel",
+    "category": "MDF & Panel",
+    "image": "images/yildiz-mdf/beyaz-068-texture.jpg",
+    "count": 23,
+    "description": ""
+  },
+  {
+    "brand": "Çamsan",
+    "brandSlug": "camsan",
+    "name": "Klasik Seri",
+    "slug": "camsan-klasik-seri",
+    "category": "Laminat Parke",
+    "image": "images/camsan/prestij-mese-705-1.jpg",
+    "count": 20,
+    "description": ""
+  },
+  {
+    "brand": "Yıldız Entegre",
+    "brandSlug": "yildiz",
+    "name": "TerraClick 8 mm",
+    "slug": "terraclick",
+    "category": "Laminat Parke",
+    "image": "images/yildiz/T_01S-1.jpg",
+    "count": 14,
+    "description": ""
+  },
+  {
+    "brand": "Yıldız Entegre",
+    "brandSlug": "yildiz",
+    "name": "Exclusive 5G",
+    "slug": "varioclic",
+    "category": "Laminat Parke",
+    "image": "images/yildiz/VX_01P-1.jpg",
+    "count": 13,
+    "description": ""
+  },
+  {
+    "brand": "Çamsan",
+    "brandSlug": "camsan",
+    "name": "Silver Seri",
+    "slug": "camsan-silver-seri",
+    "category": "Laminat Parke",
+    "image": "images/camsan/acar-mese-5004-1.jpg",
+    "count": 13,
+    "description": ""
+  },
+  {
+    "brand": "Yıldız Entegre",
+    "brandSlug": "yildiz",
+    "name": "Standard",
+    "slug": "varioclic",
+    "category": "Laminat Parke",
+    "image": "images/yildiz/V_01N-1.jpg",
+    "count": 12,
+    "description": ""
+  },
+  {
+    "brand": "Çamsan",
+    "brandSlug": "camsan",
+    "name": "Avangard Seri",
+    "slug": "camsan-avangard-seri",
+    "category": "Laminat Parke",
+    "image": "images/camsan/alaska-mese-4510-1.jpg",
+    "count": 11,
+    "description": ""
+  },
+  {
+    "brand": "Çamsan",
+    "brandSlug": "camsan",
+    "name": "Modern Long Seri",
+    "slug": "camsan-modern-long-seri",
+    "category": "Laminat Parke",
+    "image": "images/camsan/anadolu-mese-728-1.jpg",
+    "count": 11,
+    "description": ""
+  },
+  {
+    "brand": "Yıldız Entegre",
+    "brandSlug": "yildiz",
+    "name": "Premium Medium",
+    "slug": "varioclic",
+    "category": "Laminat Parke",
+    "image": "images/yildiz/PM_685-2.jpg",
+    "count": 10,
+    "description": ""
+  },
+  {
+    "brand": "Yıldız Entegre",
+    "brandSlug": "yildiz",
+    "name": "Kapak Panel Ultra Akrilik High Gloss",
+    "slug": "mdf-kapak-panel",
+    "category": "MDF & Panel",
+    "image": "images/yildiz-mdf/ultra-akrilik-kar-beyaz-u-acr-263-texture.jpg",
+    "count": 10,
+    "description": ""
+  },
+  {
+    "brand": "Yıldız Entegre",
+    "brandSlug": "yildiz",
+    "name": "Kapak Panel Lüks Akrilik High Gloss",
+    "slug": "mdf-kapak-panel",
+    "category": "MDF & Panel",
+    "image": "images/yildiz-mdf/luks-akrilik-kar-beyaz-l-acr-263-texture.jpg",
+    "count": 10,
+    "description": ""
+  },
+  {
+    "brand": "Yıldız Entegre",
+    "brandSlug": "yildiz",
+    "name": "Kompakt Lam Panel",
+    "slug": "mdf-kompakt-yogunluklu-lam-panel",
+    "category": "MDF & Panel",
+    "image": "images/yildiz-mdf/beyaz-cvt-068-render.jpg",
+    "count": 10,
+    "description": ""
+  },
+  {
+    "brand": "AGT",
+    "brandSlug": "agt",
+    "name": "Mood XLarge",
+    "slug": "mood-xlarge",
+    "category": "Laminat Parke",
+    "image": "images/agt/agt-mood-xlarge-mare-1.jpg",
+    "count": 9,
+    "description": ""
+  },
+  {
+    "brand": "AGT",
+    "brandSlug": "agt",
+    "name": "Pera Icon",
+    "slug": "pera-icon",
+    "category": "Laminat Parke",
+    "image": "images/agt/agt-pera-icon-erguvan-1.jpg",
+    "count": 9,
+    "description": ""
+  },
+  {
+    "brand": "AGT",
+    "brandSlug": "agt",
+    "name": "Marco Polo Premium",
+    "slug": "marco-polo-premium",
+    "category": "Laminat Parke",
+    "image": "images/agt/agt-marco-polo-premium-novaya-1.jpg",
+    "count": 9,
+    "description": ""
+  },
+  {
+    "brand": "AGT",
+    "brandSlug": "agt",
+    "name": "Effect Elegance",
+    "slug": "effect-elegance",
+    "category": "Laminat Parke",
+    "image": "images/agt/agt-effect-elegance-everest-1.jpg",
+    "count": 9,
+    "description": ""
+  },
+  {
+    "brand": "AGT",
+    "brandSlug": "agt",
+    "name": "Effect Premium",
+    "slug": "effect-premium",
+    "category": "Laminat Parke",
+    "image": "images/agt/agt-effect-premium-alp-1.jpg",
+    "count": 9,
+    "description": ""
+  },
+  {
+    "brand": "AGT",
+    "brandSlug": "agt",
+    "name": "Pera Collection",
+    "slug": "pera",
+    "category": "Laminat Parke",
+    "image": "images/agt/agt-pera-kardelen-1.jpg",
+    "count": 9,
+    "description": ""
+  },
+  {
+    "brand": "AGT",
+    "brandSlug": "agt",
+    "name": "Yoga Collection Premium",
+    "slug": "yoga-collection-premium",
+    "category": "Laminat Parke",
+    "image": "images/agt/agt-yoga-collection-premium-nidra-1.jpg",
+    "count": 9,
+    "description": ""
+  },
+  {
+    "brand": "AGT",
+    "brandSlug": "agt",
+    "name": "Concept Neo",
+    "slug": "concept-neo",
+    "category": "Laminat Parke",
+    "image": "images/agt/agt-concept-neo-latino-1.jpg",
+    "count": 9,
+    "description": ""
+  },
+  {
+    "brand": "AGT",
+    "brandSlug": "agt",
+    "name": "Pera Collection 8 mm",
+    "slug": "pera-collection-8-mm",
+    "category": "Laminat Parke",
+    "image": "images/agt/agt-pera-collection-8-mm-nazende-1.jpg",
+    "count": 9,
+    "description": ""
+  },
+  {
+    "brand": "AGT",
+    "brandSlug": "agt",
+    "name": "Armonia Slim",
+    "slug": "armonia-slim",
+    "category": "Laminat Parke",
+    "image": "images/agt/agt-armonia-slim-sanremo-1.jpg",
+    "count": 9,
+    "description": ""
+  },
+  {
+    "brand": "AGT",
+    "brandSlug": "agt",
+    "name": "Armonia Large",
+    "slug": "armonia-large",
+    "category": "Laminat Parke",
+    "image": "images/agt/agt-armonia-large-sanremo-1.jpg",
+    "count": 9,
+    "description": ""
+  },
+  {
+    "brand": "AGT",
+    "brandSlug": "agt",
+    "name": "Effect",
+    "slug": "effect",
+    "category": "Laminat Parke",
+    "image": "images/agt/agt-effect-alp-1.jpg",
+    "count": 9,
+    "description": ""
+  },
+  {
+    "brand": "AGT",
+    "brandSlug": "agt",
+    "name": "Yoga Collection",
+    "slug": "yoga",
+    "category": "Laminat Parke",
+    "image": "images/agt/agt-yoga-asana-1.jpg",
+    "count": 9,
+    "description": ""
+  },
+  {
+    "brand": "AGT",
+    "brandSlug": "agt",
+    "name": "Marco Polo",
+    "slug": "marco-polo",
+    "category": "Laminat Parke",
+    "image": "images/agt/agt-marco-polo-hudson-1.jpg",
+    "count": 9,
+    "description": ""
+  },
+  {
+    "brand": "AGT",
+    "brandSlug": "agt",
+    "name": "Natura Line",
+    "slug": "natura-line",
+    "category": "Laminat Parke",
+    "image": "images/agt/agt-natura-line-alba-1.jpg",
+    "count": 9,
+    "description": ""
+  },
+  {
+    "brand": "AGT",
+    "brandSlug": "agt",
+    "name": "Luna",
+    "slug": "luna",
+    "category": "Laminat Parke",
+    "image": "images/agt/agt-luna-anemon-1.jpg",
+    "count": 9,
+    "description": ""
+  },
+  {
+    "brand": "AGT",
+    "brandSlug": "agt",
+    "name": "Natura Select",
+    "slug": "natura-select",
+    "category": "Laminat Parke",
+    "image": "images/agt/agt-natura-select-patara-1.jpg",
+    "count": 9,
+    "description": ""
+  },
+  {
+    "brand": "AGT",
+    "brandSlug": "agt",
+    "name": "Bella Neo",
+    "slug": "bella-neo",
+    "category": "Laminat Parke",
+    "image": "images/agt/agt-bella-neo-vera-1.jpg",
+    "count": 9,
+    "description": ""
+  },
+  {
+    "brand": "AGT",
+    "brandSlug": "agt",
+    "name": "Corvina",
+    "slug": "corvina",
+    "category": "Laminat Parke",
+    "image": "images/agt/agt-corvina-vega-1.jpg",
+    "count": 9,
+    "description": ""
+  },
+  {
+    "brand": "AGT",
+    "brandSlug": "agt",
+    "name": "Effect 8+2",
+    "slug": "effect-8-2",
+    "category": "Laminat Parke",
+    "image": "images/agt/agt-effect-8-2-logan-1.jpg",
+    "count": 9,
+    "description": ""
+  },
+  {
+    "brand": "Çamsan",
+    "brandSlug": "camsan",
+    "name": "Diamond Seri",
+    "slug": "camsan-diamond-seri",
+    "category": "Laminat Parke",
+    "image": "images/camsan/aterna-8006-1.jpg",
+    "count": 9,
+    "description": ""
+  },
+  {
+    "brand": "Çamsan",
+    "brandSlug": "camsan",
+    "name": "Modern Seri",
+    "slug": "camsan-modern-seri",
+    "category": "Laminat Parke",
+    "image": "images/camsan/aspendos-cam-707-1.jpg",
+    "count": 9,
+    "description": ""
+  },
+  {
+    "brand": "Çamsan",
+    "brandSlug": "camsan",
+    "name": "Platinum Seri",
+    "slug": "camsan-platinum-seri",
+    "category": "Laminat Parke",
+    "image": "images/camsan/albero-mese-2103-1.jpg",
+    "count": 9,
+    "description": ""
+  },
+  {
+    "brand": "Yıldız Entegre",
+    "brandSlug": "yildiz",
+    "name": "Aqua Special",
+    "slug": "varioclic",
+    "category": "Laminat Parke",
+    "image": "images/yildiz/AQ_01R-1.jpg",
+    "count": 8,
+    "description": ""
+  },
+  {
+    "brand": "Yıldız Entegre",
+    "brandSlug": "yildiz",
+    "name": "Stilo",
+    "slug": "varioclic",
+    "category": "Laminat Parke",
+    "image": "images/yildiz/VST_11D-2.jpg",
+    "count": 8,
+    "description": ""
+  },
+  {
+    "brand": "Yıldız Entegre",
+    "brandSlug": "yildiz",
+    "name": "TerraClick 4V",
+    "slug": "terraclick",
+    "category": "Laminat Parke",
+    "image": "images/yildiz/T_87D-2.jpg",
+    "count": 8,
+    "description": ""
+  },
+  {
+    "brand": "Çamsan",
+    "brandSlug": "camsan",
+    "name": "Gloria Seri",
+    "slug": "camsan-gloria-seri",
+    "category": "Laminat Parke",
+    "image": "images/camsan/aden-6004-1.jpg",
+    "count": 8,
+    "description": ""
+  },
+  {
+    "brand": "Yıldız Entegre",
+    "brandSlug": "yildiz",
+    "name": "Kapak Panel Lüks Akrilik Mat",
+    "slug": "mdf-kapak-panel",
+    "category": "MDF & Panel",
+    "image": "images/yildiz-mdf/luks-akrilik-mat-kar-beyaz-l-acr-mat-263-render.jpg",
+    "count": 8,
+    "description": ""
+  },
+  {
+    "brand": "Yıldız Entegre",
+    "brandSlug": "yildiz",
+    "name": "Natural Sense",
+    "slug": "varioclic",
+    "category": "Laminat Parke",
+    "image": "images/yildiz/VNS_82C-2.jpg",
+    "count": 7,
+    "description": ""
+  },
+  {
+    "brand": "Yıldız Entegre",
+    "brandSlug": "yildiz",
+    "name": "Vista",
+    "slug": "varioclic",
+    "category": "Laminat Parke",
+    "image": "images/yildiz/VVS_91C-2.jpg",
+    "count": 7,
+    "description": ""
+  },
+  {
+    "brand": "AGT",
+    "brandSlug": "agt",
+    "name": "Effect Aqua Block",
+    "slug": "effect-aqua-block",
+    "category": "Laminat Parke",
+    "image": "images/agt/agt-effect-aqua-block-tibet-1.jpg",
+    "count": 6,
+    "description": ""
+  },
+  {
+    "brand": "Yıldız Entegre",
+    "brandSlug": "yildiz",
+    "name": "Premium XL",
+    "slug": "varioclic",
+    "category": "Laminat Parke",
+    "image": "images/yildiz/PE_697-2.jpg",
+    "count": 5,
+    "description": ""
+  },
+  {
+    "brand": "Çamsan",
+    "brandSlug": "camsan",
+    "name": "Belanda Seri",
+    "slug": "camsan-belanda-seri",
+    "category": "Laminat Parke",
+    "image": "images/camsan/artos-7002-1.jpg",
+    "count": 5,
+    "description": ""
+  },
+  {
+    "brand": "Çamsan",
+    "brandSlug": "camsan",
+    "name": "Serenza Seri",
+    "slug": "camsan-serenza-seri",
+    "category": "Laminat Parke",
+    "image": "images/camsan/fontana-2503-1.jpg",
+    "count": 5,
+    "description": ""
+  },
+  {
+    "brand": "Çamsan",
+    "brandSlug": "camsan",
+    "name": "Silver Plus Seri",
+    "slug": "camsan-silver-plus-seri",
+    "category": "Laminat Parke",
+    "image": "images/camsan/acar-mese-5004-1-1.jpg",
+    "count": 5,
+    "description": ""
+  },
+  {
+    "brand": "AGT",
+    "brandSlug": "agt",
+    "name": "Foresta XLarge",
+    "slug": "foresta-xlarge",
+    "category": "Laminat Parke",
+    "image": "images/agt/agt-foresta-xlarge-monte-1.jpg",
+    "count": 4,
+    "description": ""
+  },
+  {
+    "brand": "AGT",
+    "brandSlug": "agt",
+    "name": "Pruva XLarge",
+    "slug": "pruva-xl",
+    "category": "Laminat Parke",
+    "image": "images/agt/agt-pruva-xl-arya-1.jpg",
+    "count": 4,
+    "description": ""
+  },
+  {
+    "brand": "Yıldız Entegre",
+    "brandSlug": "yildiz",
+    "name": "Premium Plus",
+    "slug": "varioclic",
+    "category": "Laminat Parke",
+    "image": "images/yildiz/PP_515-2.jpg",
+    "count": 4,
+    "description": ""
+  }
+]

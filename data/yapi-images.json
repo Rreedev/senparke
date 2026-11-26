@@ -1,0 +1,132 @@
+[
+  {
+    "slug": "hero-vinc-gece",
+    "src": "/images/yapi/hero-vinc-gece.jpg",
+    "width": 2400,
+    "height": 1600,
+    "license": "cc0",
+    "source": "wikimedia",
+    "landing": "https://commons.wikimedia.org/w/index.php?curid=68938641",
+    "title": "Construction crane below night sky"
+  },
+  {
+    "slug": "kentsel-donusum-yikim",
+    "src": "/images/yapi/kentsel-donusum-yikim.jpg",
+    "width": 2000,
+    "height": 1125,
+    "license": "cc0",
+    "source": "wikimedia",
+    "landing": "https://commons.wikimedia.org/w/index.php?curid=61922410",
+    "title": "Hakhashmonaim-demolition-building-march-2017-003"
+  },
+  {
+    "slug": "kat-karsiligi-karkas",
+    "src": "/images/yapi/kat-karsiligi-karkas.jpg",
+    "width": 1500,
+    "height": 2000,
+    "license": "cc0",
+    "source": "wordpress",
+    "landing": "https://wordpress.org/photos/photo/6866aacfc4/",
+    "title": "Partially constructed concrete building with scaffolding and green safety netting, surrounded by trees and a gravel road."
+  },
+  {
+    "slug": "sifirdan-bina-vinc",
+    "src": "/images/yapi/sifirdan-bina-vinc.jpg",
+    "width": 2200,
+    "height": 1238,
+    "license": "cc0",
+    "source": "wikimedia",
+    "landing": "https://commons.wikimedia.org/w/index.php?curid=184492600",
+    "title": "Megion, buildings under construction"
+  },
+  {
+    "slug": "restorasyon-iskele",
+    "src": "/images/yapi/restorasyon-iskele.jpg",
+    "width": 2000,
+    "height": 1500,
+    "license": "cc0",
+    "source": "wordpress",
+    "landing": "https://wordpress.org/photos/photo/23861f0046/",
+    "title": "Scaffolding"
+  },
+  {
+    "slug": "restorasyon-cephe",
+    "src": "/images/yapi/restorasyon-cephe.jpg",
+    "width": 2000,
+    "height": 1500,
+    "license": "cc0",
+    "source": "wikimedia",
+    "landing": "https://commons.wikimedia.org/w/index.php?curid=17763979",
+    "title": "File:Newly renovated facades of David the Builder Avenue, Tbilisi.JPG"
+  },
+  {
+    "slug": "mimari-dokunus-cephe",
+    "src": "/images/yapi/mimari-dokunus-cephe.jpg",
+    "width": 1365,
+    "height": 2048,
+    "license": "cc0",
+    "source": "wordpress",
+    "landing": "https://wordpress.org/photos/photo/75966e418e/",
+    "title": "A modern apartment building with wooden slat balconies and large windows, set against a clear blue sky."
+  },
+  {
+    "slug": "mimari-dokunus-merdiven",
+    "src": "/images/yapi/mimari-dokunus-merdiven.jpg",
+    "width": 1400,
+    "height": 1867,
+    "license": "cc0",
+    "source": "wordpress",
+    "landing": "https://wordpress.org/photos/photo/267df771a3/",
+    "title": "A metal staircase with black railings leads up to the second floor of a residential building."
+  },
+  {
+    "slug": "konut-cephe",
+    "src": "/images/yapi/konut-cephe.jpg",
+    "width": 1500,
+    "height": 1992,
+    "license": "cc0",
+    "source": "wordpress",
+    "landing": "https://wordpress.org/photos/photo/1986a8c7c3/",
+    "title": "Modern residential apartment building with beige facade, enclosed glass balconies, and rooftop antennas against a cloudy sky."
+  },
+  {
+    "slug": "konut-yesil",
+    "src": "/images/yapi/konut-yesil.jpg",
+    "width": 1500,
+    "height": 2250,
+    "license": "cc0",
+    "source": "wikimedia",
+    "landing": "https://commons.wikimedia.org/w/index.php?curid=164584114",
+    "title": "Modern apartment building with greenery"
+  },
+  {
+    "slug": "konut-kule",
+    "src": "/images/yapi/konut-kule.jpg",
+    "width": 1257,
+    "height": 2048,
+    "license": "cc0",
+    "source": "wordpress",
+    "landing": "https://wordpress.org/photos/photo/7916a9f268/",
+    "title": "Vertical shot of a tall modern residential building with light stone cladding and glass balconies against a blue sky with soft white clouds."
+  },
+  {
+    "slug": "hafriyat",
+    "src": "/images/yapi/hafriyat.jpg",
+    "width": 2000,
+    "height": 1125,
+    "license": "cc0",
+    "source": "wordpress",
+    "landing": "https://wordpress.org/photos/photo/2246888ec6/",
+    "title": "A construction site featuring a large yellow backhoe digging into brown earth. In the background, there are several buildings under construction with scaffolding."
+  },
+  {
+    "slug": "santiye-vinc",
+    "src": "/images/yapi/santiye-vinc.jpg",
+    "width": 2000,
+    "height": 1126,
+    "license": "cc0",
+    "source": "wordpress",
+    "landing": "https://wordpress.org/photos/photo/93367af617/",
+    "title": "Buildings under construction with cranes"
+  }
+]
