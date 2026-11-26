@@ -1,0 +1,10 @@
+node_modules/
+.claude/
+senparkefotograf/
+google-profil/
+brand/*
+!brand/yapi-src/
+brand/yapi-src/*
+!brand/yapi-src/kaynaklar.json
+public/__scan/
+*.log

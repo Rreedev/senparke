@@ -1,0 +1,283 @@
+/* =========================================================
+   TAHA ŞEN YAPI — "Kat Planı"
+   Palette: fırçalanmış pirinç · mat siyah · kırık beyaz
+   Loaded after style.css; re-maps its tokens for the /yapi/ pages.
+   ========================================================= */
+body.yapi {
+  --mat: #121110;          /* mat siyah */
+  --mat-2: #1a1917;
+  --mat-3: #24221f;
+  --brass: #b08d57;        /* pirinç */
+  --brass-hi: #d8bd8c;
+  --brass-lo: #7c6036;
+  --kirik: #efe9de;        /* kırık beyaz */
+  --brushed:
+    repeating-linear-gradient(90deg, rgba(255, 255, 255, .07) 0 1px, rgba(0, 0, 0, .05) 1px 2px, transparent 2px 4px),
+    linear-gradient(100deg, #86683b 0%, #c7a56b 30%, #a7834e 50%, #dcc394 76%, #8e6f3e 100%);
+
+  --plaster: var(--kirik);
+  --paper: #e4ddd0;
+  --stone: #d2c9b8;
+  --ink: var(--mat);
+  --muted: #5e564b;
+  --walnut: var(--mat-2);
+  --walnut-2: var(--brass-lo);
+  --walnut-3: var(--mat-3);
+  --oak: var(--brass);
+  --tape: var(--brass);
+  --on-dark: var(--kirik);
+  --on-dark-muted: rgba(239, 233, 222, .62);
+  --line: rgba(18, 17, 16, .16);
+  --line-strong: rgba(18, 17, 16, .34);
+  --line-dark: rgba(239, 233, 222, .14);
+
+  background: var(--mat);
+  color: var(--kirik);
+}
+body.yapi ::selection { background: var(--brass); color: var(--mat); }
+body.yapi :focus-visible { outline-color: var(--brass-hi); }
+body.yapi:not(.is-home) main { padding-top: var(--header-h); }
+
+/* ---------- Buttons: brushed brass ---------- */
+.btn-y { --bg: transparent; --fg: var(--mat); background: var(--brushed); border-color: transparent; }
+.btn-y::before { background: var(--kirik); }
+.btn-y:hover { color: var(--mat); border-color: var(--kirik); }
+.btn-y-ghost { background: transparent; color: var(--kirik); border-color: rgba(239, 233, 222, .4); }
+.btn-y-ghost::before { background: var(--brushed); }
+.btn-y-ghost:hover { color: var(--mat); border-color: var(--brass); }
+.btn-y-dark { --bg: var(--mat); --fg: var(--kirik); }
+.btn-y-dark::before { background: var(--brushed); }
+.btn-y-dark:hover { color: var(--mat); border-color: var(--brass); }
+
+/* ---------- Brand ---------- */
+.y-brandrow { display: flex; align-items: center; gap: 16px; margin-right: auto; min-width: 0; }
+.y-logo { display: inline-flex; align-items: center; flex: none; }
+.y-logo img { display: block; height: 42px; width: auto; }
+.y-switch {
+  display: inline-flex; align-items: center; height: 32px; padding: 0 14px; border-radius: 999px; white-space: nowrap;
+  border: 1.5px solid rgba(239, 233, 222, .4); font-size: 13px; font-weight: 600; color: var(--kirik);
+  transition: background .35s var(--ease), color .35s var(--ease), border-color .35s;
+}
+.y-switch:hover { background: var(--kirik); color: var(--mat); border-color: var(--kirik); }
+
+/* Header on /yapi/: matte black glass */
+body.yapi .site-header { color: var(--kirik); }
+body.yapi .site-header::before { background: rgba(18, 17, 16, .82); box-shadow: 0 1px 0 rgba(176, 141, 87, .25); }
+body.yapi .main-nav a::after { background: var(--brass); }
+body.yapi .header-cta { background: var(--brushed); color: var(--mat); border-color: transparent; }
+body.yapi .icon-btn:hover { background: rgba(239, 233, 222, .08); }
+body.yapi .mobile-drawer { background: var(--mat-2); }
+body.yapi .drawer-foot .btn { background: var(--brushed); color: var(--mat); border-color: transparent; }
+
+/* ---------- Hero: the drawing becomes the building ---------- */
+.yh { position: relative; }
+.yh-stage { position: relative; height: 100vh; height: 100svh; min-height: 600px; overflow: hidden; background: var(--mat); color: var(--kirik); }
+.yh-photo { position: absolute; inset: 0; will-change: opacity, transform; }
+.yh-photo img { width: 100%; height: 100%; object-fit: cover; }
+.yh-shade { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(18, 17, 16, .6), rgba(18, 17, 16, .2) 40%, rgba(18, 17, 16, .85)); }
+.yh-word {
+  position: absolute; left: 0; right: 0; top: 50%; transform: translateY(-50%); display: none; justify-content: center;
+  font-size: min(10vw, 17vh); font-weight: 800; font-stretch: 125%; letter-spacing: -.05em; line-height: .9; white-space: nowrap;
+  pointer-events: none;
+}
+.yh-word .ch { display: inline-block; overflow: hidden; padding: .06em 0 .1em; vertical-align: top; }
+.yh-word .ch > span { display: inline-block; background: var(--brushed); -webkit-background-clip: text; background-clip: text; color: transparent; will-change: transform; }
+.yh-word .ch-gap { width: .26em; }
+.yh-copy { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); width: min(980px, calc(100% - 2 * var(--gutter))); text-align: center; }
+.yh-kicker { font-size: 15px; color: var(--brass-hi); margin-bottom: 22px; }
+.yh-copy h1 { font-size: clamp(40px, min(6.2vw, 10vh), 100px); font-weight: 650; font-stretch: 118%; letter-spacing: -.035em; line-height: .96; margin-bottom: 26px; }
+.yh-lead { max-width: 60ch; margin: 0 auto 34px; color: var(--on-dark-muted); font-size: 18px; }
+html.motion .yh-word { display: flex; }
+html.motion .yh-copy { visibility: hidden; }
+html.motion .yh .hx-hint { display: flex; }
+body.yapi .hx-hint { bottom: 22px; }
+body.yapi .hx-hint i::after { background: var(--brass); }
+body.yapi .hx-corner a { color: var(--brass-hi); }
+
+/* ---------- Manifesto + ruler ---------- */
+.y-manifesto { background: var(--mat); }
+body.yapi .manifesto-text { color: var(--kirik); }
+body.yapi .ruler { border-top-color: var(--brass); }
+body.yapi .ruler-ticks {
+  background:
+    repeating-linear-gradient(90deg, var(--brass) 0 1.5px, transparent 1.5px 100px) top left / 100% 26px no-repeat,
+    repeating-linear-gradient(90deg, var(--brass) 0 1px, transparent 1px 50px) top left / 100% 16px no-repeat,
+    repeating-linear-gradient(90deg, rgba(176, 141, 87, .55) 0 1px, transparent 1px 10px) top left / 100% 8px no-repeat;
+}
+body.yapi .ruler-marks dd { color: var(--brass-hi); }
+body.yapi .ruler-marks dt { color: var(--on-dark-muted); }
+
+/* ---------- Stacked service panels ---------- */
+body.yapi .stack-panel { background: var(--mat-2); }
+body.yapi .stack-media::after { background: linear-gradient(180deg, rgba(18, 17, 16, .3), rgba(18, 17, 16, 0) 38%, rgba(18, 17, 16, .88)); }
+body.yapi .stack-media img { filter: brightness(1.08) contrast(1.05); }
+body.yapi .stack-tag { background: var(--brushed); color: var(--mat); }
+body.yapi .stack-title h2 { font-size: clamp(38px, min(5vw, 9vh), 84px); }
+body.yapi .stack-title h2.is-long { font-size: clamp(32px, min(3.6vw, 7vh), 60px); line-height: 1.02; }
+
+/* ---------- Process ---------- */
+body.yapi .process { background: var(--mat-2); color: var(--kirik); }
+body.yapi .process-head p, body.yapi .process-steps p { color: var(--on-dark-muted); }
+body.yapi .process-ruler {
+  border-bottom-color: var(--brass);
+  background:
+    repeating-linear-gradient(90deg, var(--brass) 0 1.5px, transparent 1.5px calc(100% / var(--n, 6))) bottom left / calc(100% + 1.5px) 30px no-repeat,
+    repeating-linear-gradient(90deg, rgba(176, 141, 87, .45) 0 1px, transparent 1px 2.5%) bottom left / 100% 12px no-repeat;
+}
+body.yapi .process-fill { background: var(--brushed); }
+.y-process .process-steps { grid-template-columns: repeat(var(--n, 6), minmax(0, 1fr)); gap: 20px; }
+.y-process .process-steps h3 { font-size: clamp(16px, 1.35vw, 22px); overflow-wrap: anywhere; hyphens: auto; }
+body.yapi .step-num { border-color: var(--brass); color: var(--brass-hi); }
+body.yapi .process-steps li.is-on .step-num { background: var(--brushed); color: var(--mat); border-color: var(--brass); }
+
+/* ---------- District line (E-5 axis, metro map) ---------- */
+.y-line { background: var(--mat); padding: clamp(100px, 14vh, 170px) 0; overflow: hidden; }
+.y-line .looks-head p { color: var(--on-dark-muted); }
+.y-line-wrap { position: relative; margin-top: 40px; height: 240px; }
+.y-axis { position: absolute; left: 0; right: 0; top: 118px; height: 4px; background: rgba(239, 233, 222, .12); border-radius: 4px; overflow: hidden; }
+.y-axis i { position: absolute; inset: 0; background: var(--brushed); transform-origin: left; transform: scaleX(1); }
+html.motion .y-axis i { transform: scaleX(0); }
+.y-axis-label { position: absolute; right: 0; top: 0; font-size: 12px; color: var(--on-dark-muted); }
+.y-stops { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(10, minmax(0, 1fr)); gap: 6px; }
+/* the link box spans the full column height; only the dot and the labels take clicks,
+   so a long name (Büyükçekmece) never sends you to its neighbour */
+.y-stops a { position: relative; display: block; height: 240px; pointer-events: none; }
+.y-stops a .stop, .y-stops a .st-name, .y-stops a .st-sub { pointer-events: auto; }
+.y-stops .stop {
+  position: absolute; left: 0; top: 107px; width: 26px; height: 26px; border-radius: 50%; background: var(--mat); border: 4px solid var(--brass);
+  transition: transform .5s var(--ease), background .3s;
+}
+.y-stops .is-hub .stop { top: 103px; width: 34px; height: 34px; margin-left: -4px; background: var(--brushed); border-color: var(--brass-hi); box-shadow: 0 0 0 6px rgba(176, 141, 87, .22); }
+.y-stops a:hover .stop { transform: scale(1.18); background: var(--brass); }
+/* below the line (odd) */
+.st-name {
+  position: absolute; left: 0; top: 150px; white-space: nowrap;
+  font-size: clamp(15px, 1.35vw, 22px); font-weight: 650; font-stretch: 112%; letter-spacing: -.02em; line-height: 1.1;
+}
+.st-sub { position: absolute; left: 0; top: 180px; white-space: nowrap; font-size: 12px; line-height: 1.2; color: var(--on-dark-muted); }
+/* above the line (even) — sub sits nearest the line, name above it */
+.y-stops li:nth-child(even) .st-sub { top: auto; bottom: 146px; }
+.y-stops li:nth-child(even) .st-name { top: auto; bottom: 166px; }
+.y-stops a:hover .st-name { color: var(--brass-hi); }
+html.motion .y-stops li { opacity: 0; transform: translateY(16px); transition: opacity .7s var(--ease), transform .9s var(--ease); transition-delay: calc(var(--i) * 60ms); }
+html.motion .y-line.is-in .y-stops li { opacity: 1; transform: none; }
+.y-compass { display: flex; justify-content: space-between; margin: 24px 0 0; font-size: 13px; color: var(--on-dark-muted); }
+
+/* ---------- Light sections (kırık beyaz) ---------- */
+.y-light { background: var(--kirik); color: var(--mat); }
+.y-light .faq-list { border-top-color: var(--mat); }
+.y-light .faq-item { border-bottom-color: var(--line-strong); }
+.y-light .faq-item p, .y-faq-lead { color: var(--muted); }
+.y-light .faq-item summary .icon { color: var(--brass-lo); }
+.y-faqsec { padding: clamp(90px, 12vh, 140px) 0; }
+.y-faqsec .catalog-seo h2 { font-size: clamp(32px, 3.8vw, 58px); }
+
+/* ---------- Sister band: brushed brass ---------- */
+.y-sister { background: var(--brushed); color: var(--mat); padding: clamp(70px, 10vh, 110px) 0; }
+.y-sister-inner { display: grid; grid-template-columns: 1.5fr auto; gap: 32px; align-items: end; }
+.y-sister-kicker { font-size: 14px; color: rgba(18, 17, 16, .65); margin-bottom: 14px; }
+.y-sister h2 { font-size: clamp(34px, 4.2vw, 66px); font-stretch: 118%; letter-spacing: -.04em; margin-bottom: 16px; }
+.y-sister p { color: rgba(18, 17, 16, .75); max-width: 52ch; }
+.y-sister .btn-y-ghost { color: var(--mat); border-color: rgba(18, 17, 16, .5); }
+.y-sister .btn-y-ghost::before { background: var(--mat); }
+.y-sister .btn-y-ghost:hover { color: var(--kirik); border-color: var(--mat); }
+
+/* ---------- CTA ---------- */
+.y-cta { background: var(--mat-2); padding: clamp(80px, 12vh, 140px) 0; border-top: 1px solid rgba(176, 141, 87, .2); }
+.y-cta-inner { display: grid; grid-template-columns: minmax(0, 1.4fr) auto; gap: 32px; align-items: end; }
+.y-cta h2 { font-size: clamp(34px, 4.6vw, 76px); font-stretch: 118%; letter-spacing: -.04em; line-height: .98; }
+.y-cta-actions { display: flex; flex-wrap: wrap; gap: 10px; }
+
+/* ---------- Inner hero ---------- */
+.y-hero { padding-top: clamp(28px, 5vh, 56px); background: var(--mat); }
+body.yapi .breadcrumb ol { color: var(--on-dark-muted); }
+body.yapi .breadcrumb span, body.yapi .breadcrumb a:hover { color: var(--brass-hi); }
+.y-hero-kicker { font-size: 15px; color: var(--brass-hi); margin-bottom: 18px; }
+.y-hero h1 { font-size: clamp(40px, 6.4vw, 112px); font-weight: 700; font-stretch: 120%; letter-spacing: -.045em; line-height: .94; max-width: 16ch; margin-bottom: 26px; overflow-wrap: anywhere; }
+.y-hero-lead { font-size: 19px; color: var(--on-dark-muted); max-width: 58ch; margin-bottom: clamp(32px, 5vh, 56px); }
+.y-hero-media { position: relative; height: clamp(300px, 60vh, 680px); overflow: hidden; margin: 0 var(--gutter); border-radius: var(--r); background: var(--mat-2); }
+.y-hero-media img { position: absolute; left: 0; top: -8%; width: 100%; height: 116%; object-fit: cover; }
+
+/* ---------- Article ---------- */
+.y-article { padding: clamp(80px, 11vh, 130px) 0; }
+.y-article h2 { font-size: clamp(30px, 3.8vw, 58px); font-stretch: 116%; letter-spacing: -.035em; margin-bottom: 36px; }
+.y-article-grid { display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr); gap: clamp(32px, 5vw, 80px); align-items: start; }
+.y-article-body p { font-size: 19px; line-height: 1.65; max-width: 62ch; }
+.y-article-aside { position: sticky; top: calc(var(--header-h) + 30px); padding: 28px; border: 1.5px solid var(--mat); border-radius: var(--r); display: grid; gap: 18px; }
+.y-aside-title { margin: 0; font-weight: 650; font-size: 17px; }
+.y-chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.y-chips a { padding: 7px 14px; border-radius: 999px; border: 1.5px solid var(--line-strong); font-size: 14px; font-weight: 500; transition: background .3s, color .3s, border-color .3s; }
+.y-chips a:hover { background: var(--mat); color: var(--kirik); border-color: var(--mat); }
+.y-chips-dark a { border-color: rgba(239, 233, 222, .3); }
+.y-chips-dark a:hover { background: var(--brushed); color: var(--mat); border-color: var(--brass); }
+.y-photonote { font-size: 13px; color: var(--muted); margin-top: 28px; }
+
+.y-svc-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(14px, 1.6vw, 24px); margin-bottom: 56px; }
+.y-svc-card { display: flex; flex-direction: column; gap: 16px; }
+.y-svc-card img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-radius: var(--r); transition: transform 1.2s var(--ease); }
+.y-svc-card:hover img { transform: scale(1.03); }
+.y-svc-card h3 { font-size: clamp(20px, 1.7vw, 24px); font-stretch: 114%; margin-bottom: 8px; }
+.y-svc-card p { color: var(--muted); font-size: 15px; }
+.y-local { display: grid; grid-template-columns: minmax(0, 1.5fr) auto; gap: 28px; align-items: center; padding: 28px 0; border-top: 1.5px solid var(--mat); border-bottom: 1px solid var(--line-strong); }
+.y-local p { margin: 0; font-size: 17px; max-width: 64ch; }
+
+.y-more { background: var(--mat); padding: clamp(80px, 11vh, 130px) 0; }
+.y-more h2 { font-size: clamp(30px, 3.6vw, 54px); font-stretch: 116%; letter-spacing: -.035em; margin-bottom: 32px; }
+.y-more-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: clamp(12px, 1.4vw, 20px); }
+.y-more-card { position: relative; display: block; overflow: hidden; border-radius: var(--r); aspect-ratio: 3 / 4; }
+.y-more-card img { width: 100%; height: 100%; object-fit: cover; transition: transform 1.2s var(--ease); }
+.y-more-card:hover img { transform: scale(1.05); }
+.y-more-card::after { content: ""; position: absolute; inset: 0; background: linear-gradient(transparent 35%, rgba(18, 17, 16, .9)); }
+.y-more-card span { position: absolute; left: 16px; right: 16px; bottom: 16px; z-index: 1; font-size: clamp(16px, 1.4vw, 20px); font-weight: 650; font-stretch: 112%; line-height: 1.15; }
+
+/* Forms on kırık beyaz */
+.y-light .form-card { background: #f6f2ea; border-color: var(--line); }
+.y-light .field input, .y-light .field select, .y-light .field textarea { background: var(--kirik); }
+.y-light .field input:focus, .y-light .field select:focus, .y-light .field textarea:focus { box-shadow: 0 0 0 3px rgba(176, 141, 87, .45); border-color: var(--mat); }
+.y-light .contact-block .icon, .y-light .check-list .icon { color: var(--brass-lo); }
+.y-light .form-success { background: rgba(176, 141, 87, .16); border-color: var(--brass); }
+
+/* Footer */
+body.yapi .site-footer { background: var(--mat-2); border-top: 1px solid rgba(176, 141, 87, .2); }
+body.yapi .footer-title { color: var(--brass-hi); }
+/* "Taha Şen Yapı" is 13 characters wide: keep it inside the viewport */
+body.yapi .footer-word { height: 8.6vw; }
+body.yapi .footer-word span { font-size: 10.4vw; background: var(--brushed); -webkit-background-clip: text; background-clip: text; color: transparent; opacity: .55; }
+body.yapi .footer-col a:hover, body.yapi .footer-bottom a:hover { color: var(--brass-hi); }
+body.yapi .whatsapp-float { background: var(--brushed); color: var(--mat); }
+body.yapi .back-top { background: var(--mat-2); color: var(--kirik); border-color: rgba(176, 141, 87, .4); }
+body.yapi .curtain i { background: var(--mat-2); }
+body.yapi .curtain i:nth-child(even) { background: var(--mat-3); }
+body.yapi .scroll-meter span { background: var(--brass); }
+
+/* ---------- Responsive ---------- */
+@media (max-width: 1180px) {
+  .y-process .process-steps { grid-template-columns: repeat(3, minmax(0, 1fr)); row-gap: 30px; }
+  .y-stops { gap: 4px; }
+}
+@media (max-height: 760px) {
+  .yh .hx-corner { display: none; }
+}
+@media (max-width: 900px) {
+  .y-switch { display: none; }
+  .y-logo img { height: 34px; }
+  .yh-word { font-size: 10.4vw; }
+  .yh .hx-corner { display: none; }
+  .y-line-wrap { height: auto; }
+  .y-stops { grid-template-columns: 1fr; gap: 0; }
+  .y-axis { left: 11px; right: auto; top: 0; bottom: 0; width: 4px; height: auto; }
+  .y-axis i { transform-origin: top; }
+  html.motion .y-axis i { transform: scaleY(0); }
+  .y-axis-label { display: none; }
+  .y-stops a { display: flex; height: auto; flex-direction: row; align-items: center; gap: 16px; padding: 12px 0; }
+  .y-stops .stop, .y-stops .is-hub .stop { position: static; flex: none; margin: 0; }
+  .st-name, .st-sub, .y-stops li:nth-child(even) .st-name, .y-stops li:nth-child(even) .st-sub { position: static; }
+  .st-name { margin: 0; font-size: 21px; }
+  .y-compass { display: none; }
+  .y-sister-inner, .y-cta-inner, .y-article-grid, .y-local { grid-template-columns: 1fr; }
+  .y-article-aside { position: static; }
+  .y-svc-grid { grid-template-columns: 1fr; }
+  .y-more-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .y-hero-media { margin: 0; border-radius: 0; height: 46vh; }
+  .y-process .process-steps { grid-template-columns: 1fr; }
+}
