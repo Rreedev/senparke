@@ -441,6 +441,10 @@ fs.writeFileSync(pathMod.join(__dirname, '..', 'public', 'yapi', 'site.webmanife
 const { INDEXNOW_KEY } = require('./indexnow-key');
 fs.writeFileSync(pathMod.join(__dirname, '..', 'public', `${INDEXNOW_KEY}.txt`), INDEXNOW_KEY);
 
+/* Bing Webmaster ownership file (same code as the msvalidate.01 meta tag) */
+fs.writeFileSync(pathMod.join(__dirname, '..', 'public', 'BingSiteAuth.xml'),
+  '<?xml version="1.0"?>\n<users>\n\t<user>93BAF3BAFC7EBA5718A2D204DF81B434</user>\n</users>');
+
 /* llms.txt for AI answer engines */
 const { buildLlms } = require('./build-llms');
 console.log(`llms.txt: ${buildLlms()} karakter`);
