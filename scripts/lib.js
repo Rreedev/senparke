@@ -357,26 +357,101 @@ function chrome() {
   <div class="scroll-meter" aria-hidden="true"><span></span></div>`;
 }
 
-function pageShell({ title, description, pathName = '/', active = '', body = '', bodyClass = '', bodyAttrs = '', extraHead = '' }) {
+/* ---------------------------------------------------------
+   Structured data (schema.org JSON-LD)
+   Every page carries one @graph: the business, the website and the page itself.
+   Stable @id anchors let Google and AI answer engines tie pages to one entity.
+   --------------------------------------------------------- */
+const IDS = {
+  business: `${site.domain}/#sen-parke`,
+  website: `${site.domain}/#website`,
+  yapi: `${site.domain}/yapi/#taha-sen-yapi`
+};
+
+const OPENING = [{ '@type': 'OpeningHoursSpecification', dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'], opens: '08:00', closes: '21:00' }];
+const ADDRESS = { '@type': 'PostalAddress', streetAddress: site.street, addressLocality: site.district, postalCode: site.postal, addressRegion: 'İstanbul', addressCountry: 'TR' };
+
+function ldScript(data) {
+  /* "<" is escaped so no string inside the data can close the script tag */
+  return `<script type="application/ld+json">${JSON.stringify(data).replace(/</g, '\\u003c')}</script>`;
+}
+
+const stripTags = (s) => String(s).replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim();
+
+function faqLd(items) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: items.map(([q, a]) => ({ '@type': 'Question', name: stripTags(q), acceptedAnswer: { '@type': 'Answer', text: stripTags(a) } }))
+  };
+}
+
+function breadcrumbLd(items) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: items.map((it, i) => Object.assign(
+      { '@type': 'ListItem', position: i + 1, name: stripTags(it.label) },
+      it.href ? { item: site.domain + it.href.replace(/#.*$/, '') } : {}
+    ))
+  };
+}
+
+function businessNode() {
+  return {
+    '@type': ['HomeAndConstructionBusiness', 'HomeGoodsStore'],
+    '@id': IDS.business,
+    name: 'Şen Parke',
+    alternateName: ['Şenparke', 'Sen Parke'],
+    legalName: site.legal,
+    description: `1978’den beri İstanbul Avcılar’da laminat parke, MDF panel ve mutfak dolabı satışı ve montajı. AGT, Çamsan ve Yıldız Entegre’den ${stats.laminat} laminat parke modeli ve ${stats.mdf} MDF ürünü; showroom, ofis ve 1000 m² depo aynı adreste.`,
+    url: `${site.domain}/`,
+    logo: `${site.domain}/assets/logo/logo.png`,
+    image: ['magaza-cephesi', 'showroom-genel', 'showroom-numune-standi'].map(n => `${site.domain}/images/showroom/${n}.jpg`),
+    telephone: site.phones[0].href,
+    foundingDate: String(site.since),
+    founder: { '@type': 'Person', name: site.founder },
+    address: ADDRESS,
+    hasMap: site.maps,
+    openingHoursSpecification: OPENING,
+    areaServed: { '@type': 'City', name: 'İstanbul' },
+    contactPoint: site.phones.map(p => ({ '@type': 'ContactPoint', telephone: p.href, name: p.name, contactType: 'customer service', areaServed: 'TR', availableLanguage: 'Turkish' })),
+    brand: ['AGT', 'Çamsan', 'Yıldız Entegre'].map(b => ({ '@type': 'Brand', name: b })),
+    knowsAbout: ['Laminat parke', 'MDF panel', 'Mutfak dolabı', 'Parke montajı', 'Süpürgelik ve geçiş profili', 'Zemin kaplama'],
+    hasOfferCatalog: {
+      '@type': 'OfferCatalog',
+      name: 'Ürün ve hizmetler',
+      itemListElement: [
+        ['Laminat parke', paths.laminat], ['MDF ve panel', paths.mdf], ['Mutfak dolabı', paths.mutfak], ['Ücretsiz keşif, ölçü ve montaj', paths.teklif]
+      ].map(([name, href]) => ({ '@type': 'OfferCatalog', name, url: site.domain + href }))
+    },
+    subOrganization: { '@id': IDS.yapi },
+    sameAs: [site.google]
+  };
+}
+
+function websiteNode() {
+  return { '@type': 'WebSite', '@id': IDS.website, url: `${site.domain}/`, name: 'Şen Parke', alternateName: 'Şenparke', inLanguage: 'tr-TR', publisher: { '@id': IDS.business } };
+}
+
+function pageGraph({ canonical, name, description, about = IDS.business, image, extra = [] }) {
+  return ldScript({
+    '@context': 'https://schema.org',
+    '@graph': [
+      businessNode(),
+      websiteNode(),
+      Object.assign({ '@type': 'WebPage', '@id': `${canonical}#webpage`, url: canonical, name, description, inLanguage: 'tr-TR', isPartOf: { '@id': IDS.website }, about: { '@id': about } },
+        image ? { primaryImageOfPage: { '@type': 'ImageObject', url: image } } : {}),
+      ...extra
+    ]
+  });
+}
+
+function pageShell({ title, description, pathName = '/', active = '', body = '', bodyClass = '', bodyAttrs = '', extraHead = '', ogImage = '/images/showroom/showroom-genel.jpg' }) {
   const fullTitle = title ? `${title} | Şen Parke` : 'Şen Parke | Laminat Parke, MDF ve Mutfak Dolabı | Avcılar, 1978’den Beri';
   const desc = description || `1978’den beri Avcılar’da laminat parke, MDF ve mutfak dolabı. AGT, Çamsan ve Yıldız Entegre koleksiyonlarından ${stats.laminat} laminat model; keşiften montaja tek elden.`;
   const canonical = `${site.domain}${pathName}`;
-  const orgLd = JSON.stringify({
-    '@context': 'https://schema.org',
-    '@type': 'HomeAndConstructionBusiness',
-    name: 'Şen Parke',
-    legalName: 'Şen Parke',
-    url: site.domain,
-    logo: `${site.domain}/assets/logo/logo.png`,
-    image: `${site.domain}/assets/logo/logo.png`,
-    foundingDate: '1978',
-    founder: { '@type': 'Person', name: site.founder },
-    address: { '@type': 'PostalAddress', streetAddress: site.street, addressLocality: site.district, postalCode: site.postal, addressRegion: 'İstanbul', addressCountry: 'TR' },
-    openingHoursSpecification: [{ '@type': 'OpeningHoursSpecification', dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'], opens: '08:00', closes: '21:00' }],
-    telephone: site.phone,
-    contactPoint: site.phones.map(p => ({ '@type': 'ContactPoint', telephone: p.number, name: p.name, contactType: 'customer service', areaServed: 'TR', availableLanguage: 'Turkish' })),
-    sameAs: []
-  });
+  const ogAbs = /^https?:/.test(ogImage) ? ogImage : site.domain + ogImage;
   return `<!doctype html>
 <html lang="tr">
 <head>
@@ -384,13 +459,18 @@ function pageShell({ title, description, pathName = '/', active = '', body = '',
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>${esc(fullTitle)}</title>
   <meta name="description" content="${esc(desc)}">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
   <link rel="canonical" href="${esc(canonical)}">
   <meta property="og:type" content="website">
-  <meta property="og:site_name" content="Şenparke">
+  <meta property="og:locale" content="tr_TR">
+  <meta property="og:site_name" content="Şen Parke">
   <meta property="og:title" content="${esc(fullTitle)}">
   <meta property="og:description" content="${esc(desc)}">
   <meta property="og:url" content="${esc(canonical)}">
-  <meta property="og:image" content="${site.domain}/images/site/interior-3.jpg">
+  <meta property="og:image" content="${esc(ogAbs)}">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="geo.region" content="TR-34">
+  <meta name="geo.placename" content="Avcılar, İstanbul">
   <meta name="theme-color" content="#2e2119">
   <link rel="icon" href="/assets/logo/favicon-32.png" type="image/png" sizes="32x32">
   <link rel="apple-touch-icon" href="/assets/logo/favicon-180.png">
@@ -399,7 +479,7 @@ function pageShell({ title, description, pathName = '/', active = '', body = '',
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/assets/css/style.css">
-  <script type="application/ld+json">${orgLd}</script>
+  ${pageGraph({ canonical, name: fullTitle, description: desc, image: ogAbs })}
   ${extraHead}
 </head>
 <body class="${bodyClass}" ${bodyAttrs}>
@@ -460,7 +540,7 @@ function breadcrumb(items) {
   return `<nav class="breadcrumb" aria-label="Sayfa yolu"><ol>${items.map((it, i) => {
     const last = i === items.length - 1;
     return `<li>${last ? `<span>${esc(it.label)}</span>` : `<a href="${it.href}">${esc(it.label)}</a>`}</li>`;
-  }).join('')}</ol></nav>`;
+  }).join('')}</ol></nav>${ldScript(breadcrumbLd(items))}`;
 }
 
 function sectionHead(eyebrow, title, desc = '', opts = {}) {
@@ -495,5 +575,6 @@ function productJsonLd(p) {
 
 module.exports = {
   ROOT, PUB, site, stats, paths, nav, icon, esc, img, logo, logoMark, brandClass, brandShort,
-  header, footer, pageShell, productCard, collectionCard, breadcrumb, sectionHead, productJsonLd
+  header, footer, pageShell, productCard, collectionCard, breadcrumb, sectionHead, productJsonLd,
+  IDS, OPENING, ADDRESS, ldScript, faqLd, breadcrumbLd, businessNode, websiteNode, stripTags
 };

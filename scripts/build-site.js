@@ -400,3 +400,7 @@ const today = new Date().toISOString().slice(0, 10);
 const extra = yapiPaths.map(p => `  <url>\n    <loc>${site.domain}${p}</loc>\n    <lastmod>${today}</lastmod>\n    <changefreq>monthly</changefreq>\n    <priority>${p === '/yapi/' ? '0.9' : '0.7'}</priority>\n  </url>`).join('\n');
 fs.writeFileSync(smPath, fs.readFileSync(smPath, 'utf8').replace('</urlset>', extra + '\n</urlset>'));
 console.log(`Taha Şen Yapı: ${yapiPaths.length} sayfa`);
+
+/* llms.txt for AI answer engines */
+const { buildLlms } = require('./build-llms');
+console.log(`llms.txt: ${buildLlms()} karakter`);

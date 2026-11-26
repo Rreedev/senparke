@@ -350,7 +350,27 @@ function legalPages() {
    --------------------------------------------------------- */
 function robotsSitemap() {
   fs.writeFileSync(path.join(PUB, 'robots.txt'),
-`User-agent: *
+`# Şen Parke ve Taha Şen Yapı: tüm içerik arama motorlarına ve yapay zekâ asistanlarına açıktır.
+User-agent: *
+Allow: /
+Disallow: /404.html
+
+# Arama ve yapay zekâ yanıt motorları (açıkça izinli)
+User-agent: Googlebot
+User-agent: Bingbot
+User-agent: YandexBot
+User-agent: Applebot
+User-agent: Google-Extended
+User-agent: GPTBot
+User-agent: OAI-SearchBot
+User-agent: ChatGPT-User
+User-agent: ClaudeBot
+User-agent: Claude-SearchBot
+User-agent: Claude-User
+User-agent: PerplexityBot
+User-agent: Perplexity-User
+User-agent: Applebot-Extended
+User-agent: CCBot
 Allow: /
 
 Sitemap: ${site.domain}/sitemap.xml
@@ -359,6 +379,7 @@ Sitemap: ${site.domain}/sitemap.xml
   const urls = [
     { loc: '/', priority: '1.0', changefreq: 'weekly' },
     { loc: paths.laminat, priority: '0.9', changefreq: 'weekly' },
+    { loc: paths.mdf, priority: '0.8', changefreq: 'weekly' },
     { loc: paths.mutfak, priority: '0.9', changefreq: 'monthly' },
     { loc: paths.markalar, priority: '0.7', changefreq: 'monthly' },
     { loc: paths.galeri, priority: '0.6', changefreq: 'monthly' },

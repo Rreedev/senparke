@@ -5,7 +5,7 @@ const fs = require('fs');
 const path = require('path');
 const {
   PUB, site, paths, icon, esc, img,
-  productCard, collectionCard, breadcrumb, sectionHead, productJsonLd
+  productCard, collectionCard, breadcrumb, sectionHead, productJsonLd, ldScript, faqLd
 } = require('./lib');
 
 const products = JSON.parse(fs.readFileSync(path.join(PUB, 'data', 'products.json'), 'utf8'));
@@ -66,7 +66,7 @@ function faqList(items) {
     <details class="faq-item">
       <summary>${esc(q)} ${icon('plus', 18)}</summary>
       <p>${a}</p>
-    </details>`).join('')}</div>`;
+    </details>`).join('')}</div>${ldScript(faqLd(items))}`;
 }
 
 /* ---------------------------------------------------------
@@ -232,7 +232,8 @@ function productPage(p) {
     ${breadcrumb([
       { label: 'Ana Sayfa', href: '/' },
       { label: p.category, href: catHref },
-      { label: p.collection, href: `${catHref}?collection=${encodeURIComponent(p.collection)}` }
+      { label: p.collection, href: `${catHref}?collection=${encodeURIComponent(p.collection)}` },
+      { label: p.name }
     ])}
     <div class="product-hero">
       <div class="product-gallery">
@@ -301,7 +302,8 @@ function productPage(p) {
     description: (p.shortDescription || p.description || `${p.brand} ${p.name}, ${p.collection} koleksiyonu ${p.category.toLowerCase()}`).slice(0, 300),
     pathName: '/' + p.url,
     active: 'Parke',
-    extraHead: `<script type="application/ld+json">${productJsonLd(p)}</script>`
+    extraHead: `<script type="application/ld+json">${productJsonLd(p).replace(/</g, '\\u003c')}</script>`,
+    ogImage: '/' + gallery[0].replace(/^\//, '')
   };
 }
 

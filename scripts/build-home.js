@@ -3,7 +3,19 @@
    The floor lays itself, then pulls apart to reveal the room.
    ========================================================= */
 const { site, stats, paths, icon, esc, pageShell, logoMark } = require('./lib');
-const { write, products, laminat, laminatCollections } = require('./build-helpers');
+const { write, products, laminat, laminatCollections, faqList } = require('./build-helpers');
+
+/* Answer-first questions: the first sentence of every answer stands on its own,
+   so search snippets and AI answer engines can quote it directly. */
+const HOME_FAQ = () => [
+  ['Şen Parke nerede, çalışma saatleri nedir?', `Şen Parke, ${site.address} adresindedir; showroom, ofis ve 1000 m² ana depo aynı binadadır. Hafta içi ve cumartesi 08:00–21:00 arası açığız, pazar kapalıyız.`],
+  ['Hangi markaların laminat parkelerini satıyorsunuz?', `AGT, Çamsan ve Yıldız Entegre’nin toplam ${stats.laminat} laminat parke modelini satıyor ve monte ediyoruz. Yıldız Entegre’nin ${stats.mdf} MDF ve panel ürünü de kataloğumuzda.`],
+  ['Keşif ve ölçü ücretli mi?', 'Hayır, İstanbul içinde keşif ve ölçü ücretsizdir. Mekânı yerinde görüp ölçüyü alıyor, ardından malzeme, süpürgelik ve işçiliği kalem kalem içeren yazılı teklif veriyoruz.'],
+  ['Laminat parke fiyatı neye göre değişir?', 'Fiyat; seçilen marka ve seri, metrekare, süpürgelik ve geçiş profilleri ile montaj kapsamına göre değişir. Bu yüzden sitede fiyat yazmıyor, keşiften sonra net ve yazılı teklif veriyoruz.'],
+  ['Parke montajını kim yapıyor, ne kadar sürer?', 'Montajı kendi ekibimiz yapıyor. 100 m²’lik bir alan, süpürgelik ve geçiş profilleriyle birlikte genellikle 1–2 günde tamamlanır.'],
+  ['Parke ve mutfak dolabını birlikte yaptırabilir miyim?', 'Evet. Zemin ve mutfak aynı keşifte planlandığında süpürgelik, geçiş profili ve tezgâh kotu ilk seferde doğru hizalanır; ikisini tek ekiple, tek takvimle yürütüyoruz.'],
+  ['Şen Parke ne zamandan beri faaliyette?', `Şen Parke ${site.since}’de ${site.founder} tarafından kuruldu; aile işletmesi olarak yaklaşık yarım asırdır İstanbul’da parke ve zemin işi yapıyor.`]
+];
 
 const coll = (name) => laminatCollections.find(c => c.name === name);
 const url = (src) => '/' + String(src || '').replace(/^\//, '');
@@ -291,6 +303,16 @@ function homePage() {
         <a class="link-line" href="${paths.galeri}">Galerinin tamamı</a>
       </div>
       <div class="archive-cols">${archiveCols}</div>
+    </div>
+  </section>
+
+  <section class="section container home-faq" id="sss">
+    <div class="catalog-seo">
+      <div>
+        <h2 data-split>Sık sorulan <em>sorular.</em></h2>
+        <p>Aklınıza takılan başka bir şey varsa <a class="link-line" href="tel:${site.phones[0].href}">${esc(site.phones[0].name)}: ${esc(site.phones[0].number)}</a> numarasından ya da WhatsApp’tan sorabilirsiniz.</p>
+      </div>
+      <div>${faqList(HOME_FAQ())}</div>
     </div>
   </section>`;
 

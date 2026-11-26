@@ -7,7 +7,7 @@
    ========================================================= */
 const fs = require('fs');
 const path = require('path');
-const { PUB, site, icon, esc } = require('./lib');
+const { PUB, site, icon, esc, IDS, OPENING, ldScript, faqLd, breadcrumbLd, businessNode, websiteNode } = require('./lib');
 
 const Y = {
   name: 'Taha Şen Yapı',
@@ -244,15 +244,41 @@ function yFooter() {
   <button class="back-top" type="button" aria-label="Yukarı çık">${icon('arrowUp', 18)}</button>`;
 }
 
-function yShell({ title, description, pathName, active = '', body, bodyClass = '' }) {
+function contractorNode() {
+  return {
+    '@type': 'GeneralContractor',
+    '@id': IDS.yapi,
+    name: Y.name,
+    legalName: Y.legal,
+    description: 'Avcılar merkezli yapı firması: kentsel dönüşüm, kat karşılığı inşaat, sıfırdan yapı, renovasyon ve restorasyon, mimari dokunuşlar ve yaşam alanı dizaynı. İstanbul’un batısında Büyükçekmece’den Bakırköy’e.',
+    url: `${Y.domain}/`,
+    logo: `${site.domain}/assets/logo/tahasen-logo.png`,
+    image: `${site.domain}${im('hero-vinc-gece')}`,
+    telephone: Y.phoneHref,
+    address: { '@type': 'PostalAddress', addressLocality: 'Avcılar', addressRegion: 'İstanbul', addressCountry: 'TR' },
+    openingHoursSpecification: OPENING,
+    areaServed: DISTRICTS.map(d => ({ '@type': 'Place', name: `${d.name}${d.parent ? ', ' + d.parent : ''}, İstanbul` })),
+    knowsAbout: ['Kentsel dönüşüm', '6306 sayılı Kanun', 'Riskli yapı tespiti', 'Kat karşılığı inşaat', 'Anahtar teslim bina', 'Renovasyon', 'Restorasyon', 'Cephe yenileme', 'İç mimari ve yaşam alanı dizaynı'],
+    hasOfferCatalog: { '@type': 'OfferCatalog', name: 'Hizmetler', itemListElement: SERVICES.map(s => ({ '@type': 'Offer', itemOffered: { '@type': 'Service', name: s.name, url: site.domain + P.svc(s.slug) } })) },
+    parentOrganization: { '@id': IDS.business },
+    employee: { '@type': 'Person', name: 'Taha Şen', telephone: Y.phoneHref }
+  };
+}
+
+function yShell({ title, description, pathName, active = '', body, bodyClass = '', ld = [], ogImage }) {
   const fullTitle = title ? `${title} | ${Y.name}` : `${Y.name} | Kentsel Dönüşüm, Kat Karşılığı ve İnşaat | Avcılar`;
   const desc = description || 'Taha Şen Yapı: Avcılar merkezli kentsel dönüşüm, kat karşılığı inşaat, sıfırdan yapı, renovasyon ve restorasyon. Beylikdüzü, Esenyurt, Küçükçekmece, Bakırköy ve çevresi.';
-  const ld = JSON.stringify({
-    '@context': 'https://schema.org', '@type': 'GeneralContractor', name: Y.name, legalName: Y.legal, logo: site.domain + '/assets/logo/tahasen-logo.png',
-    url: Y.domain + '/', telephone: Y.phone, parentOrganization: { '@type': 'Organization', name: 'Şen Parke', url: site.domain },
-    areaServed: DISTRICTS.map(d => ({ '@type': 'Place', name: `${d.name}${d.parent ? ', ' + d.parent : ''}, İstanbul` })),
-    address: { '@type': 'PostalAddress', addressLocality: 'Avcılar', addressRegion: 'İstanbul', addressCountry: 'TR' },
-    openingHoursSpecification: [{ '@type': 'OpeningHoursSpecification', dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'], opens: '08:00', closes: '21:00' }]
+  const canonical = site.domain + pathName;
+  const og = site.domain + (ogImage || im('hero-vinc-gece'));
+  const graph = ldScript({
+    '@context': 'https://schema.org',
+    '@graph': [
+      contractorNode(),
+      businessNode(),
+      websiteNode(),
+      { '@type': 'WebPage', '@id': `${canonical}#webpage`, url: canonical, name: fullTitle, description: desc, inLanguage: 'tr-TR', isPartOf: { '@id': IDS.website }, about: { '@id': IDS.yapi }, primaryImageOfPage: { '@type': 'ImageObject', url: og } },
+      ...ld
+    ]
   });
   return `<!doctype html>
 <html lang="tr">
@@ -261,12 +287,18 @@ function yShell({ title, description, pathName, active = '', body, bodyClass = '
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>${esc(fullTitle)}</title>
   <meta name="description" content="${esc(desc)}">
-  <link rel="canonical" href="${esc(site.domain + pathName)}">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+  <link rel="canonical" href="${esc(canonical)}">
   <meta property="og:type" content="website">
+  <meta property="og:locale" content="tr_TR">
   <meta property="og:site_name" content="${Y.name}">
   <meta property="og:title" content="${esc(fullTitle)}">
   <meta property="og:description" content="${esc(desc)}">
-  <meta property="og:image" content="${site.domain}${im('hero-vinc-gece')}">
+  <meta property="og:url" content="${esc(canonical)}">
+  <meta property="og:image" content="${esc(og)}">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="geo.region" content="TR-34">
+  <meta name="geo.placename" content="Avcılar, İstanbul">
   <meta name="theme-color" content="#121110">
   <link rel="icon" href="/assets/logo/tahasen-favicon-32.png" type="image/png" sizes="32x32">
   <link rel="apple-touch-icon" href="/assets/logo/tahasen-favicon-180.png">
@@ -276,7 +308,7 @@ function yShell({ title, description, pathName, active = '', body, bodyClass = '
   <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/assets/css/style.css">
   <link rel="stylesheet" href="/assets/css/yapi.css">
-  <script type="application/ld+json">${ld}</script>
+  ${graph}
 </head>
 <body class="yapi ${bodyClass}">
   <a class="skip-link" href="#main">İçeriğe geç</a>
@@ -300,7 +332,7 @@ function yShell({ title, description, pathName, active = '', body, bodyClass = '
    --------------------------------------------------------- */
 function faqHTML(items) {
   return `<div class="faq-list">${items.map(([q, a]) => `
-    <details class="faq-item"><summary>${esc(q)} ${icon('plus', 18)}</summary><p>${esc(a)}</p></details>`).join('')}</div>`;
+    <details class="faq-item"><summary>${esc(q)} ${icon('plus', 18)}</summary><p>${esc(a)}</p></details>`).join('')}</div>${ldScript(faqLd(items))}`;
 }
 
 function stepsHTML(steps) {
@@ -450,6 +482,7 @@ function yPageHero({ kicker, title, lead, img, alt, crumbs }) {
   return `<section class="y-hero">
     <div class="container">
       <nav class="breadcrumb" aria-label="Sayfa yolu"><ol><li><a href="${P.home}">Taha Şen Yapı</a></li>${crumbs.map((c, i) => `<li>${i === crumbs.length - 1 ? `<span>${esc(c.label)}</span>` : `<a href="${c.href}">${esc(c.label)}</a>`}</li>`).join('')}</ol></nav>
+      ${ldScript(breadcrumbLd([{ label: 'Taha Şen Yapı', href: P.home }, ...crumbs]))}
       <p class="y-hero-kicker">${esc(kicker)}</p>
       <h1 data-split>${esc(title)}</h1>
       <p class="y-hero-lead" data-fade>${esc(lead)}</p>
@@ -496,7 +529,19 @@ function servicePages() {
     write(`yapi/hizmetler/${s.slug}/index.html`, yShell({
       title: `${s.name} — Avcılar ve İstanbul’un batısı`,
       description: `${Y.name}: ${s.lead} Avcılar, Beylikdüzü, Esenyurt, Küçükçekmece, Bakırköy ve çevresinde ${s.name.toLocaleLowerCase('tr-TR')}.`,
-      pathName: P.svc(s.slug), active: s.slug, body
+      pathName: P.svc(s.slug), active: s.slug, body, ogImage: im(s.img),
+      ld: [{
+        '@type': 'Service',
+        '@id': `${site.domain}${P.svc(s.slug)}#service`,
+        name: s.name,
+        serviceType: s.name,
+        description: [s.lead, ...s.body].join(' '),
+        url: site.domain + P.svc(s.slug),
+        image: site.domain + im(s.img),
+        provider: { '@id': IDS.yapi },
+        areaServed: DISTRICTS.filter(d => KIND_SERVICES[d.kind].includes(s.slug) || d.hub).map(d => ({ '@type': 'Place', name: `${d.name}${d.parent ? ', ' + d.parent : ''}, İstanbul` })),
+        hasOfferCatalog: { '@type': 'OfferCatalog', name: `${s.name} süreci`, itemListElement: s.steps.map((st, i) => ({ '@type': 'Offer', position: i + 1, itemOffered: { '@type': 'Service', name: st } })) }
+      }]
     }));
   });
 }
@@ -504,15 +549,37 @@ function servicePages() {
 /* ---------------------------------------------------------
    District pages
    --------------------------------------------------------- */
+/* Turkish locative/dative suffix helpers for place names (Avcılar’da, Bakırköy’de, Esenyurt’ta) */
+const HARD = 'çfhkpsştÇFHKPSŞT';
+const lastVowel = (w) => (w.toLocaleLowerCase('tr-TR').match(/[aeıioöuü]/g) || ['a']).pop();
+const LOC_EXCEPT = { 'Beylikdüzü': 'Beylikdüzü’nde' };   /* possessive ending takes the buffer n */
+const loc = (w) => LOC_EXCEPT[w] || `${w}’${HARD.includes(w.slice(-1)) ? 't' : 'd'}${'aıou'.includes(lastVowel(w)) ? 'a' : 'e'}`;
+
+function districtFaq(d, svc, label) {
+  const names = svc.map(s => s.name.toLocaleLowerCase('tr-TR'));
+  const first = {
+    transform: [`${loc(d.name)} kentsel dönüşüm süreci nasıl başlar?`, `Süreç, binanın Bakanlıkça lisanslandırılmış bir kuruluşa yaptırılan riskli yapı tespitiyle başlar. Ardından kat malikleriyle toplantı yapılır, dönüşüm modeli ve paylaşım yazılı olarak netleşir; proje ve ruhsattan sonra tahliye ve inşaata geçilir. ${label} için ilk görüşmeyi binanızda, ücretsiz yapıyoruz.`],
+    mixed: [`${loc(d.name)} kat karşılığı inşaat nasıl işler?`, `Arsa sahibi arsasını, yüklenici proje, malzeme ve işçiliği koyar; ortaya çıkan bağımsız bölümler noterde yapılan sözleşmedeki oranla paylaşılır. ${label} için imar durumunu ve fizibiliteyi binanıza özel çıkarıyor, teklifi yazılı veriyoruz.`],
+    new: [`${loc(d.name)} arsama sıfırdan bina yaptırmak için nereden başlamalıyım?`, `İlk adım imar durumu ve zemin etüdüdür; bunlar binanın kaç kat ve kaç bağımsız bölüm olabileceğini belirler. Ardından mimari ve statik projeyi lisanslı mimar ve mühendislerle hazırlıyor, ruhsattan iskâna kadar süreci tek elden yürütüyoruz.`]
+  }[d.kind];
+  return [
+    first,
+    [`${loc(d.name)} kat karşılığı paylaşım oranı ne kadar?`, 'Sabit bir oran yoktur. Oran; parselin imar durumu ve emsali, çıkabilecek bağımsız bölüm sayısı, konum ve güncel inşaat maliyetine göre hesaplanır. Önceden oran vaat etmiyor, hesabı sizinle şeffaf biçimde paylaşıyoruz.'],
+    [`Taha Şen Yapı ${d.hub ? `${loc(d.name)} hangi hizmetleri veriyor` : `${d.name} için hangi hizmetleri veriyor`}?`, `${label} için öne çıkan hizmetlerimiz ${names.slice(0, -1).join(', ')} ve ${names.slice(-1)[0]}. ${d.hub ? 'Merkezimiz Avcılar’da; ilçedeki şantiyeleri her gün yerinde takip ediyoruz.' : `Merkezimiz Avcılar’da olduğu için ${loc(d.name)} şantiyeyi yakından takip ediyoruz.`}`],
+    ['Ön görüşme ve yerinde inceleme ücretli mi?', 'Hayır, ön görüşme ve yerinde inceleme ücretsizdir. Görüşmeden sonra fizibiliteyi ve teklifi yazılı olarak paylaşıyoruz.']
+  ];
+}
+
 function districtPages() {
   DISTRICTS.forEach(d => {
     const svc = KIND_SERVICES[d.kind].map(k => SERVICES.find(s => s.slug === k));
     const label = d.parent ? `${d.name}, ${d.parent}` : d.name;
+    const faq = districtFaq(d, svc, label);
     const body = `
-    ${yPageHero({ kicker: d.parent ? `${d.parent}, İstanbul` : 'İstanbul', title: `${d.name}’de yapı ve kentsel dönüşüm`, lead: d.note, img: d.img, alt: `${d.name} için örnek yapı görseli`, crumbs: [{ label: 'Bölgeler', href: `${P.home}#bolgeler` }, { label: d.name }] })}
+    ${yPageHero({ kicker: d.parent ? `${d.parent}, İstanbul` : 'İstanbul', title: `${loc(d.name)} yapı ve kentsel dönüşüm`, lead: d.note, img: d.img, alt: `${d.name} için örnek yapı görseli`, crumbs: [{ label: 'Bölgeler', href: `${P.home}#bolgeler` }, { label: d.name }] })}
     <section class="y-light y-article">
       <div class="container">
-        <h2 data-split>${esc(d.name)}’de öne çıkan hizmetlerimiz</h2>
+        <h2 data-split>${esc(loc(d.name))} öne çıkan hizmetlerimiz</h2>
         <div class="y-svc-grid">${svc.map(s => `
           <a class="y-svc-card" href="${P.svc(s.slug)}">
             <img src="${im(s.img)}" alt="${esc(s.alt)}" loading="lazy">
@@ -525,17 +592,23 @@ function districtPages() {
         ${photoNote()}
       </div>
     </section>
+    <section class="y-light y-faqsec">
+      <div class="container catalog-seo">
+        <div><h2 data-split>${esc(d.name)} için sık sorulanlar</h2></div>
+        <div>${faqHTML(faq)}</div>
+      </div>
+    </section>
     <section class="y-more">
       <div class="container">
         <h2 data-split>Diğer bölgeler</h2>
         <div class="y-chips y-chips-dark">${DISTRICTS.filter(o => o.slug !== d.slug).map(o => `<a href="${P.dist(o.slug)}">${esc(o.name)}</a>`).join('')}</div>
       </div>
     </section>
-    ${ctaBand(`${d.name}’deki binanız için ücretsiz ön görüşme.`)}`;
+    ${ctaBand(`${loc(d.name)}ki binanız için ücretsiz ön görüşme.`)}`;
     write(`yapi/bolgeler/${d.slug}/index.html`, yShell({
       title: `${d.name} Kentsel Dönüşüm ve Kat Karşılığı`,
       description: `${label}: kentsel dönüşüm, kat karşılığı inşaat, sıfırdan yapı ve renovasyon. ${Y.name}, Avcılar merkezli; ücretsiz ön görüşme.`,
-      pathName: P.dist(d.slug), active: 'bolgeler', body
+      pathName: P.dist(d.slug), active: 'bolgeler', body, ogImage: im(d.img)
     }));
   });
 }
@@ -604,4 +677,4 @@ function buildYapi() {
   return written.map(r => '/' + r.replace(/index\.html$/, ''));
 }
 
-module.exports = { buildYapi, YAPI_PATHS: () => written.map(r => '/' + r.replace(/index\.html$/, '')) };
+module.exports = { buildYapi, YAPI_PATHS: () => written.map(r => '/' + r.replace(/index\.html$/, '')), SERVICES, DISTRICTS, YP: P, Y };
