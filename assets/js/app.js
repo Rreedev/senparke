@@ -631,8 +631,10 @@
         }
         if (subject && p.category === 'Laminat Parke') subject.value = 'Laminat Parke';
         if (message && !message.value) message.value = `İlgilendiğim ürün: ${p.brand} ${p.name}${p.code ? ' (' + p.code + ')' : ''} — ${p.collection}`;
-      } else if (params.get('konu') === 'mutfak' && subject) {
-        subject.value = 'Mutfak Dolabı';
+      } else if (subject) {
+        const map = { mutfak: 'Mutfak Dolabı', parke: 'Laminat Parke', ahsap: 'Ahşap ve Masif Parke', sistre: 'Parke Sistre ve Cila' };
+        const v = map[params.get('konu')];
+        if (v && [...subject.options].some(o => o.value === v)) subject.value = v;
       }
     } catch (err) { /* noop */ }
   }
