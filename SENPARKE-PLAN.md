@@ -163,6 +163,17 @@ statik hosting'e (Netlify, Vercel, cPanel, nginx…) olduğu gibi yüklenir.
 
 Yerel önizleme: `node scripts/serve.js 4173` → `http://localhost:4173`
 
+### Canlı yayın (26.11.2026)
+- **Depo:** https://github.com/Rreedev/senparke (`main` = kaynak, `gh-pages` = `public/` içeriği).
+- **Hosting:** GitHub Pages, `gh-pages` dalından. HTTPS zorunlu.
+- **Şu anki adres:** https://senparke.rree.site (Cloudflare'de rree.site → CNAME `senparke` → `rreedev.github.io`, DNS only).
+- **Güncelleme:** `powershell -File scripts\deploy.ps1 "not"` → derler, `main`'e push eder, `gh-pages`'i yeniler.
+- **senparke.com:** Cloudflare'e eklendi (Free plan), kayıtlar hazır:
+  apex A → 185.199.108–111.153, `www` → `rreedev.github.io`, e-posta (MX, mail, autodiscover, SRV, SPF, DMARC) Natro'da kaldı,
+  `ftp` → 94.73.151.218 (eski hosting). Hepsi "DNS only".
+  **Bekleyen:** Natro panelinde nameserver'lar `karina.ns.cloudflare.com` + `venkat.ns.cloudflare.com` yapılmalı (DNSSEC kapalı olmalı).
+  Etkinleşince: `public/CNAME` → `senparke.com`, Pages custom domain → `senparke.com`, ardından deploy.
+
 ---
 
 ## 8. Sizden gerekenler (yayın öncesi kontrol listesi)
