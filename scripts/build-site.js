@@ -48,7 +48,7 @@ function laminatPage() {
     items: interleave(laminat, 'brand'),
     pathName: paths.laminat,
     active: 'Parke',
-    title: `Laminat Parke — ${stats.laminat} Model`,
+    title: `Laminat Parke Modelleri ve Montajı — ${stats.laminat} Model, Avcılar`,
     description: `AGT, Çamsan ve Yıldız Entegre laminat parke koleksiyonları: ${stats.laminat} model, ${stats.laminatCollections} seri. Marka, koleksiyon, renk tonu, desen ve kalınlığa göre filtreleyin; teklif alın.`,
     hero: {
       eyebrow: 'Laminat Parke',
@@ -392,12 +392,15 @@ markalarPage();
 galeriPage();
 buildRest();
 
-/* Taha Şen Yapı sub-site + its URLs in the sitemap */
+/* Local parke pages + Taha Şen Yapı sub-site, appended to the sitemap */
+const { buildParkeAreas } = require('./build-parke-bolgeler');
+const parkePaths = buildParkeAreas();
+console.log(`Parke bölge sayfaları: ${parkePaths.length}`);
 const { buildYapi } = require('./build-yapi');
 const yapiPaths = buildYapi();
 const smPath = pathMod.join(__dirname, '..', 'public', 'sitemap.xml');
 const today = new Date().toISOString().slice(0, 10);
-const extra = yapiPaths.map(p => `  <url>\n    <loc>${site.domain}${p}</loc>\n    <lastmod>${today}</lastmod>\n    <changefreq>monthly</changefreq>\n    <priority>${p === '/yapi/' ? '0.9' : '0.7'}</priority>\n  </url>`).join('\n');
+const extra = [...parkePaths, ...yapiPaths].map(p => `  <url>\n    <loc>${site.domain}${p}</loc>\n    <lastmod>${today}</lastmod>\n    <changefreq>monthly</changefreq>\n    <priority>${p === '/yapi/' ? '0.9' : '0.8'}</priority>\n  </url>`).join('\n');
 fs.writeFileSync(smPath, fs.readFileSync(smPath, 'utf8').replace('</urlset>', extra + '\n</urlset>'));
 console.log(`Taha Şen Yapı: ${yapiPaths.length} sayfa`);
 

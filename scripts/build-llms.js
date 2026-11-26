@@ -6,7 +6,7 @@
    ========================================================= */
 const fs = require('fs');
 const path = require('path');
-const { PUB, site, stats, paths } = require('./lib');
+const { PUB, site, stats, paths, AREAS } = require('./lib');
 const { collections } = require('./build-helpers');
 const { SERVICES, DISTRICTS, YP, Y } = require('./build-yapi');
 
@@ -46,6 +46,11 @@ function buildLlms() {
 2. Numune ve seçim: Showroomda ya da evde numunelerle seri seçilir.
 3. Yazılı teklif: Malzeme, süpürgelik ve işçilik kalem kalem.
 4. Montaj ve teslim: Kendi ekibimiz döşer; 100 m² genellikle 1–2 gün sürer.
+
+## Parke hizmet bölgeleri
+
+Merkez Avcılar; İstanbul içinde keşif ve ölçü ücretsiz. Bölge sayfaları:
+${AREAS.map(a => `- [${a.name} parke${a.parent ? ` (${a.parent})` : ''}](${d}${paths.parkeArea(a.slug)})${a.hub ? ': showroom ve depo burada' : ''}`).join('\n')}
 
 ## Sayfalar
 

@@ -7,7 +7,7 @@
    ========================================================= */
 const fs = require('fs');
 const path = require('path');
-const { PUB, site, icon, esc, IDS, OPENING, ldScript, faqLd, breadcrumbLd, businessNode, websiteNode } = require('./lib');
+const { PUB, site, paths, icon, esc, IDS, OPENING, ldScript, faqLd, breadcrumbLd, businessNode, websiteNode, loc } = require('./lib');
 
 const Y = {
   name: 'Taha Şen Yapı',
@@ -266,7 +266,7 @@ function contractorNode() {
 }
 
 function yShell({ title, description, pathName, active = '', body, bodyClass = '', ld = [], ogImage }) {
-  const fullTitle = title ? `${title} | ${Y.name}` : `${Y.name} | Kentsel Dönüşüm, Kat Karşılığı ve İnşaat | Avcılar`;
+  const fullTitle = title ? `${title} | ${Y.name}` : `${Y.name} | Avcılar Kentsel Dönüşüm, Kat Karşılığı ve Müteahhitlik`;
   const desc = description || 'Taha Şen Yapı: Avcılar merkezli kentsel dönüşüm, kat karşılığı inşaat, sıfırdan yapı, renovasyon ve restorasyon. Beylikdüzü, Esenyurt, Küçükçekmece, Bakırköy ve çevresi.';
   const canonical = site.domain + pathName;
   const og = site.domain + (ogImage || im('hero-vinc-gece'));
@@ -549,11 +549,6 @@ function servicePages() {
 /* ---------------------------------------------------------
    District pages
    --------------------------------------------------------- */
-/* Turkish locative/dative suffix helpers for place names (Avcılar’da, Bakırköy’de, Esenyurt’ta) */
-const HARD = 'çfhkpsştÇFHKPSŞT';
-const lastVowel = (w) => (w.toLocaleLowerCase('tr-TR').match(/[aeıioöuü]/g) || ['a']).pop();
-const LOC_EXCEPT = { 'Beylikdüzü': 'Beylikdüzü’nde' };   /* possessive ending takes the buffer n */
-const loc = (w) => LOC_EXCEPT[w] || `${w}’${HARD.includes(w.slice(-1)) ? 't' : 'd'}${'aıou'.includes(lastVowel(w)) ? 'a' : 'e'}`;
 
 function districtFaq(d, svc, label) {
   const names = svc.map(s => s.name.toLocaleLowerCase('tr-TR'));
@@ -566,6 +561,7 @@ function districtFaq(d, svc, label) {
     first,
     [`${loc(d.name)} kat karşılığı paylaşım oranı ne kadar?`, 'Sabit bir oran yoktur. Oran; parselin imar durumu ve emsali, çıkabilecek bağımsız bölüm sayısı, konum ve güncel inşaat maliyetine göre hesaplanır. Önceden oran vaat etmiyor, hesabı sizinle şeffaf biçimde paylaşıyoruz.'],
     [`Taha Şen Yapı ${d.hub ? `${loc(d.name)} hangi hizmetleri veriyor` : `${d.name} için hangi hizmetleri veriyor`}?`, `${label} için öne çıkan hizmetlerimiz ${names.slice(0, -1).join(', ')} ve ${names.slice(-1)[0]}. ${d.hub ? 'Merkezimiz Avcılar’da; ilçedeki şantiyeleri her gün yerinde takip ediyoruz.' : `Merkezimiz Avcılar’da olduğu için ${loc(d.name)} şantiyeyi yakından takip ediyoruz.`}`],
+    [`${loc(d.name)} müteahhit seçerken nelere dikkat etmeliyim?`, 'Sözleşmenin noterde düzenlenmesine; teslim tarihi, gecikme cezası, daire dağılımı ve malzeme listesinin yazılı olmasına; yapı denetim firmasının ve ruhsatın bulunmasına; müteahhidin tamamladığı işleri yerinde görmeye dikkat edin. Biz bu maddelerin hepsini sözleşmede açıkça yazıyoruz.'],
     ['Ön görüşme ve yerinde inceleme ücretli mi?', 'Hayır, ön görüşme ve yerinde inceleme ücretsizdir. Görüşmeden sonra fizibiliteyi ve teklifi yazılı olarak paylaşıyoruz.']
   ];
 }
@@ -589,6 +585,7 @@ function districtPages() {
           <p>${esc(label)} için ilk görüşmeyi yerinde yapıyoruz: binayı ya da arsayı birlikte geziyor, malik toplantısına katılıyor, ardından fizibiliteyi yazılı olarak paylaşıyoruz. Merkezimiz Avcılar’da olduğu için şantiyeyi yakından takip ediyoruz.</p>
           <a class="btn btn-y-dark" href="${P.contact}?bolge=${encodeURIComponent(d.name)}">${esc(d.name)} için görüşme talebi</a>
         </div>
+        <p class="y-sibling">Daire içinde zemin yenilemesi mi düşünüyorsunuz? <a class="link-line" href="${paths.parkeArea(d.slug)}">${esc(loc(d.name))} laminat parke: Şen Parke</a></p>
         ${photoNote()}
       </div>
     </section>
@@ -606,7 +603,7 @@ function districtPages() {
     </section>
     ${ctaBand(`${loc(d.name)}ki binanız için ücretsiz ön görüşme.`)}`;
     write(`yapi/bolgeler/${d.slug}/index.html`, yShell({
-      title: `${d.name} Kentsel Dönüşüm ve Kat Karşılığı`,
+      title: `${d.name} Kentsel Dönüşüm, Kat Karşılığı ve Müteahhit`,
       description: `${label}: kentsel dönüşüm, kat karşılığı inşaat, sıfırdan yapı ve renovasyon. ${Y.name}, Avcılar merkezli; ücretsiz ön görüşme.`,
       pathName: P.dist(d.slug), active: 'bolgeler', body, ogImage: im(d.img)
     }));

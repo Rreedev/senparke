@@ -2,7 +2,7 @@
    ŞENPARKE — home page ("Döşeme")
    The floor lays itself, then pulls apart to reveal the room.
    ========================================================= */
-const { site, stats, paths, icon, esc, pageShell, logoMark } = require('./lib');
+const { site, stats, paths, icon, esc, pageShell, logoMark, AREAS } = require('./lib');
 const { write, products, laminat, laminatCollections, faqList } = require('./build-helpers');
 
 /* Answer-first questions: the first sentence of every answer stands on its own,
@@ -311,6 +311,8 @@ function homePage() {
       <div>
         <h2 data-split>Sık sorulan <em>sorular.</em></h2>
         <p>Aklınıza takılan başka bir şey varsa <a class="link-line" href="tel:${site.phones[0].href}">${esc(site.phones[0].name)}: ${esc(site.phones[0].number)}</a> numarasından ya da WhatsApp’tan sorabilirsiniz.</p>
+        <p class="eyebrow home-areas-title">Parke hizmet bölgeleri</p>
+        <nav class="area-chips" aria-label="Parke hizmet bölgeleri">${AREAS.map(a => `<a href="${paths.parkeArea(a.slug)}">${esc(a.name)}</a>`).join('')}</nav>
       </div>
       <div>${faqList(HOME_FAQ())}</div>
     </div>

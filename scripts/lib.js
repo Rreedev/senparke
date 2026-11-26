@@ -54,7 +54,31 @@ const stats = (() => {
   };
 })();
 
+/* Service areas, west to east along the E-5. Shared by Şen Parke (/parke/<slug>/)
+   and Taha Şen Yapı (/yapi/bolgeler/<slug>/) so the two sites cross-link. */
+const AREAS = [
+  { slug: 'buyukcekmece', name: 'Büyükçekmece', parent: '' },
+  { slug: 'gulpinar', name: 'Gülpınar', parent: 'Beylikdüzü' },
+  { slug: 'yakuplu', name: 'Yakuplu', parent: 'Beylikdüzü' },
+  { slug: 'beylikduzu', name: 'Beylikdüzü', parent: '' },
+  { slug: 'esenyurt', name: 'Esenyurt', parent: '' },
+  { slug: 'avcilar', name: 'Avcılar', parent: '', hub: true },
+  { slug: 'kucukcekmece', name: 'Küçükçekmece', parent: '' },
+  { slug: 'sefakoy', name: 'Sefaköy', parent: 'Küçükçekmece' },
+  { slug: 'sirinevler', name: 'Şirinevler', parent: 'Bahçelievler' },
+  { slug: 'bakirkoy', name: 'Bakırköy', parent: '' }
+];
+
+/* Turkish case suffixes for place names: Avcılar’da / Esenyurt’ta / Beylikdüzü’nde, …’dan / …’tan / …’nden */
+const HARD = 'çfhkpsştÇFHKPSŞT';
+const lastVowel = (w) => (w.toLocaleLowerCase('tr-TR').match(/[aeıioöuü]/g) || ['a']).pop();
+const LOC_EXCEPT = { 'Beylikdüzü': 'Beylikdüzü’nde' };   /* possessive ending takes the buffer n */
+const loc = (w) => LOC_EXCEPT[w] || `${w}’${HARD.includes(w.slice(-1)) ? 't' : 'd'}${'aıou'.includes(lastVowel(w)) ? 'a' : 'e'}`;
+const abl = (w) => loc(w) + 'n';
+
 const paths = {
+  parke: '/parke/',
+  parkeArea: (slug) => `/parke/${slug}/`,
   laminat: '/kategori/laminat-parke/',
   mdf: '/kategori/mdf-panel/',
   mutfak: '/mutfak-dolabi/',
@@ -334,6 +358,10 @@ function footer() {
         </div>
       </div>
     </div>
+    <div class="container footer-areas">
+      <a class="footer-title" href="${paths.parke}">Parke hizmet bölgeleri</a>
+      <nav aria-label="Parke hizmet bölgeleri">${AREAS.map(a => `<a href="${paths.parkeArea(a.slug)}">${esc(a.name)} parke</a>`).join('')}</nav>
+    </div>
     <div class="footer-word" aria-hidden="true"><span>Şen Parke</span></div>
     <div class="container footer-bottom">
       <p>© ${new Date().getFullYear()} ${site.legal}. İstanbul, 1978'den beri.</p>
@@ -414,7 +442,7 @@ function businessNode() {
     address: ADDRESS,
     hasMap: site.maps,
     openingHoursSpecification: OPENING,
-    areaServed: { '@type': 'City', name: 'İstanbul' },
+    areaServed: [{ '@type': 'City', name: 'İstanbul' }, ...AREAS.map(a => ({ '@type': 'Place', name: `${a.name}${a.parent ? ', ' + a.parent : ''}, İstanbul`, url: site.domain + paths.parkeArea(a.slug) }))],
     contactPoint: site.phones.map(p => ({ '@type': 'ContactPoint', telephone: p.href, name: p.name, contactType: 'customer service', areaServed: 'TR', availableLanguage: 'Turkish' })),
     brand: ['AGT', 'Çamsan', 'Yıldız Entegre'].map(b => ({ '@type': 'Brand', name: b })),
     knowsAbout: ['Laminat parke', 'MDF panel', 'Mutfak dolabı', 'Parke montajı', 'Süpürgelik ve geçiş profili', 'Zemin kaplama'],
@@ -448,7 +476,7 @@ function pageGraph({ canonical, name, description, about = IDS.business, image, 
 }
 
 function pageShell({ title, description, pathName = '/', active = '', body = '', bodyClass = '', bodyAttrs = '', extraHead = '', ogImage = '/images/showroom/showroom-genel.jpg' }) {
-  const fullTitle = title ? `${title} | Şen Parke` : 'Şen Parke | Laminat Parke, MDF ve Mutfak Dolabı | Avcılar, 1978’den Beri';
+  const fullTitle = title ? `${title} | Şen Parke` : 'Şen Parke | Avcılar Laminat Parke, MDF ve Mutfak Dolabı | 1978’den Beri';
   const desc = description || `1978’den beri Avcılar’da laminat parke, MDF ve mutfak dolabı. AGT, Çamsan ve Yıldız Entegre koleksiyonlarından ${stats.laminat} laminat model; keşiften montaja tek elden.`;
   const canonical = `${site.domain}${pathName}`;
   const ogAbs = /^https?:/.test(ogImage) ? ogImage : site.domain + ogImage;
@@ -576,5 +604,6 @@ function productJsonLd(p) {
 module.exports = {
   ROOT, PUB, site, stats, paths, nav, icon, esc, img, logo, logoMark, brandClass, brandShort,
   header, footer, pageShell, productCard, collectionCard, breadcrumb, sectionHead, productJsonLd,
-  IDS, OPENING, ADDRESS, ldScript, faqLd, breadcrumbLd, businessNode, websiteNode, stripTags
+  IDS, OPENING, ADDRESS, ldScript, faqLd, breadcrumbLd, businessNode, websiteNode, stripTags,
+  AREAS, loc, abl
 };
