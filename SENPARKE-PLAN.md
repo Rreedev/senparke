@@ -188,7 +188,10 @@ Yerel önizleme: `node scripts/serve.js 4173` → `http://localhost:4173`
   ayrı metin, mahalle adları, bölgeye özel seri önerisi (4 koleksiyon + 8 ürün), 5 SSS, Service şeması, Taha Şen Yapı'nın aynı bölge
   sayfasına çapraz bağlantı. Tüm sayfaların footer'ında ve ana sayfada bölge bağlantıları. Yapı bölge sayfalarına "müteahhit seçimi" SSS'i.
   Başlıklar: "Avcılar Laminat Parke…", "Avcılar Kentsel Dönüşüm, Kat Karşılığı ve Müteahhitlik".
-- **Not:** Kullanıcı listesindeki "Gülpınar", Beylikdüzü'nde resmi adı "Gürpınar" olan mahalle olabilir; teyit edilecek.
+- "Gülpınar" → **Gürpınar** olarak düzeltildi (kullanıcı onayı); eski `/…/gulpinar/` adresleri yönlendirme sayfası.
+- **Canlı (26.11.2026 19:31):** https://senparke.com.tr, HTTPS zorunlu, http → https 301, senparke.xyz → 301.
+- Site haritası görselli (1640 görsel), `site.webmanifest` (Şen Parke ve /yapi/), `<link rel="sitemap">`.
+- **IndexNow** (Bing/Yandex): anahtar `scripts/indexnow-key.js`, gönderim `node scripts/indexnow.js` (her büyük güncellemeden sonra).
 
 ### Alan adı gelince yapılacaklar (sırayla)
 1. TRABIS NS'i Cloudflare gösterdiğinde: GitHub Pages sertifikası → `https_enforced = true`.
