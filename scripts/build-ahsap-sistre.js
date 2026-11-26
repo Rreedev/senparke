@@ -144,7 +144,7 @@ function ahsapPage() {
   ${cta('Ahşap parkenizi <em>birlikte seçelim.</em>', 'Mekânınızı görüp ağaç türü, desen ve yüzey işlemi için numunelerle gelelim.', 'ahsap')}`;
 
   write('ahsap-masif-parke/index.html', pageShell({
-    title: 'Ahşap ve Masif Parke — Satış, Döşeme ve Sistre, Avcılar',
+    title: 'Ahşap ve Masif Parke Satış ve Döşeme, Avcılar',
     description: 'Masif ve lamine ahşap parke satışı ve döşemesi: meşe ve diğer ağaç türleri, düz, balıksırtı ve Macar desen. Ücretsiz keşif, kendi ekibimizle montaj, sistre ve cila. Şen Parke, Avcılar, 1978’den beri.',
     pathName,
     active: 'Parke',
@@ -238,7 +238,7 @@ function sistrePage() {
   ${cta('Parkenizi <em>yenileyelim.</em>', 'Zemininizi görüp sistrenin mi yoksa yalnızca yeni cilanın mı yeteceğini söyleyelim.', 'sistre')}`;
 
   write('parke-sistre-cila/index.html', pageShell({
-    title: 'Parke Sistre ve Cila — Ahşap Parke Yenileme, Avcılar',
+    title: 'Parke Sistre ve Cila, Avcılar',
     description: 'Ahşap ve masif parke sistre ve cila: zımpara, onarım, derz dolgu ve yeni cila ya da yağ. Avcılar, Beylikdüzü, Esenyurt, Bakırköy ve çevresinde ücretsiz keşif. Şen Parke, 1978’den beri.',
     pathName,
     active: 'Parke',

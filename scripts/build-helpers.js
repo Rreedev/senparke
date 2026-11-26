@@ -61,6 +61,29 @@ function homeCategoryCard({ kicker, title, desc, img: src, href }) {
   </a>`;
 }
 
+/* Product <title> and meta description: unique per product, under the lengths Google shows
+   (~60 / ~160 chars), with the product type and the local intent (Avcılar, keşif, montaj). */
+function productMeta(p) {
+  const kind = p.category === 'MDF & Panel' ? 'Panel' : 'Laminat Parke';
+  const base = `${p.brand} ${p.name} ${kind}`;
+  /* Panels repeat colour names across series, so they always carry the series (and code) */
+  const title = p.category === 'MDF & Panel'
+    ? `${p.name} ${kind} — ${p.collection}${p.code ? ` ${p.code}` : ''}`
+    : (base + ' — ' + p.collection).length <= 50 ? `${base} — ${p.collection}` : base;
+  const specs = [p.thickness, p.size, p.joint || p.surface].map(s => String(s || '').trim()).filter(Boolean).join(', ');
+  const lead = `${p.brand} ${p.collection} ${p.name} ${kind.toLocaleLowerCase('tr-TR')}${specs ? ` (${specs})` : ''}.`;
+  const tail = p.category === 'MDF & Panel'
+    ? ' Avcılar showroomda numune, kesim ve uygulama için Şen Parke’ye danışın.'
+    : ' Avcılar showroomda numune, İstanbul içi ücretsiz keşif ve montaj. Şen Parke, 1978’den beri.';
+  let description = lead + tail;
+  for (const t of [' Avcılar showroom, ücretsiz keşif ve montaj.', ' Ücretsiz keşif ve montaj, Avcılar.', ' Şen Parke, Avcılar.']) {
+    if (description.length <= 160) break;
+    description = lead + t;
+  }
+  if (description.length > 160) description = description.slice(0, 157).replace(/\s+\S*$/, '') + '…';
+  return { title, description };
+}
+
 function faqList(items) {
   return `<div class="faq-list">${items.map(([q, a]) => `
     <details class="faq-item">
@@ -298,8 +321,7 @@ function productPage(p) {
 
   return {
     body,
-    title: `${p.brand} ${p.name} — ${p.collection}`,
-    description: (p.shortDescription || p.description || `${p.brand} ${p.name}, ${p.collection} koleksiyonu ${p.category.toLowerCase()}`).slice(0, 300),
+    ...productMeta(p),
     pathName: '/' + p.url,
     active: 'Parke',
     extraHead: `<script type="application/ld+json">${productJsonLd(p).replace(/</g, '\\u003c')}</script>`,

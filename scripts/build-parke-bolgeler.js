@@ -279,7 +279,7 @@ function hubPage() {
   </section>`;
 
   write('parke/index.html', pageShell({
-    title: 'Parke Hizmet Bölgeleri — Avcılar, Beylikdüzü, Esenyurt, Bakırköy',
+    title: 'Parke Hizmet Bölgeleri: Avcılar ve Çevresi',
     description: 'Şen Parke laminat parke hizmet bölgeleri: Avcılar, Beylikdüzü, Gürpınar, Yakuplu, Esenyurt, Küçükçekmece, Sefaköy, Şirinevler, Bakırköy ve Büyükçekmece. Ücretsiz keşif, ölçü ve montaj.',
     pathName: paths.parke,
     active: 'Parke',

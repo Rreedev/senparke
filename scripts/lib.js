@@ -481,7 +481,7 @@ function pageGraph({ canonical, name, description, about = IDS.business, image, 
 }
 
 function pageShell({ title, description, pathName = '/', active = '', body = '', bodyClass = '', bodyAttrs = '', extraHead = '', ogImage = '/images/showroom/showroom-genel.jpg' }) {
-  const fullTitle = title ? `${title} | Şen Parke` : 'Şen Parke | Avcılar Laminat Parke, MDF ve Mutfak Dolabı | 1978’den Beri';
+  const fullTitle = title ? `${title} | Şen Parke` : 'Şen Parke | Avcılar Laminat Parke, Ahşap Parke ve Mutfak Dolabı';
   const desc = description || `1978’den beri Avcılar’da laminat parke, MDF ve mutfak dolabı. AGT, Çamsan ve Yıldız Entegre koleksiyonlarından ${stats.laminat} laminat model; keşiften montaja tek elden.`;
   const canonical = `${site.domain}${pathName}`;
   const ogAbs = /^https?:/.test(ogImage) ? ogImage : site.domain + ogImage;

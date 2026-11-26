@@ -48,7 +48,7 @@ function laminatPage() {
     items: interleave(laminat, 'brand'),
     pathName: paths.laminat,
     active: 'Parke',
-    title: `Laminat Parke Modelleri ve Montajı — ${stats.laminat} Model, Avcılar`,
+    title: 'Laminat Parke Modelleri ve Montajı, Avcılar',
     description: `AGT, Çamsan ve Yıldız Entegre laminat parke koleksiyonları: ${stats.laminat} model, ${stats.laminatCollections} seri. Marka, koleksiyon, renk tonu, desen ve kalınlığa göre filtreleyin; teklif alın.`,
     hero: {
       eyebrow: 'Laminat Parke',

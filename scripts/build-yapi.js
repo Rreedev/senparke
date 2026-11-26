@@ -605,8 +605,8 @@ function districtPages() {
     </section>
     ${ctaBand(`${loc(d.name)}ki binanız için ücretsiz ön görüşme.`)}`;
     write(`yapi/bolgeler/${d.slug}/index.html`, yShell({
-      title: `${d.name} Kentsel Dönüşüm, Kat Karşılığı ve Müteahhit`,
-      description: `${label}: kentsel dönüşüm, kat karşılığı inşaat, sıfırdan yapı ve renovasyon. ${Y.name}, Avcılar merkezli; ücretsiz ön görüşme.`,
+      title: `${d.name} Kentsel Dönüşüm ve Kat Karşılığı`,
+      description: `${label} kentsel dönüşüm, kat karşılığı inşaat, sıfırdan yapı ve renovasyon. Güvenilir müteahhit: ${Y.name}, Avcılar merkezli; ücretsiz ön görüşme.`,
       pathName: P.dist(d.slug), active: 'bolgeler', body, ogImage: im(d.img)
     }));
   });
