@@ -152,6 +152,8 @@ function iletisimPage() {
             <label for="cSubject">Konu</label>
             <select id="cSubject" name="subject">
               <option value="Laminat Parke">Laminat Parke</option>
+              <option value="Ahşap ve Masif Parke">Ahşap ve Masif Parke</option>
+              <option value="Parke Sistre ve Cila">Parke Sistre ve Cila</option>
               <option value="MDF ve Panel">MDF ve Panel</option>
               <option value="Mutfak Dolabı">Mutfak Dolabı</option>
               <option value="Diğer">Diğer</option>
@@ -221,6 +223,8 @@ function teklifPage() {
             <select id="fieldSubject" name="subject" required>
               <option value="">Seçin…</option>
               <option value="Laminat Parke">Laminat Parke</option>
+              <option value="Ahşap ve Masif Parke">Ahşap ve Masif Parke</option>
+              <option value="Parke Sistre ve Cila">Parke Sistre ve Cila</option>
               <option value="MDF ve Panel">MDF ve Panel</option>
               <option value="Mutfak Dolabı">Mutfak Dolabı</option>
               <option value="Laminat + Mutfak">Laminat Parke + Mutfak Dolabı</option>

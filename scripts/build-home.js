@@ -13,6 +13,7 @@ const HOME_FAQ = () => [
   ['Keşif ve ölçü ücretli mi?', 'Hayır, İstanbul içinde keşif ve ölçü ücretsizdir. Mekânı yerinde görüp ölçüyü alıyor, ardından malzeme, süpürgelik ve işçiliği kalem kalem içeren yazılı teklif veriyoruz.'],
   ['Laminat parke fiyatı neye göre değişir?', 'Fiyat; seçilen marka ve seri, metrekare, süpürgelik ve geçiş profilleri ile montaj kapsamına göre değişir. Bu yüzden sitede fiyat yazmıyor, keşiften sonra net ve yazılı teklif veriyoruz.'],
   ['Parke montajını kim yapıyor, ne kadar sürer?', 'Montajı kendi ekibimiz yapıyor. 100 m²’lik bir alan, süpürgelik ve geçiş profilleriyle birlikte genellikle 1–2 günde tamamlanır.'],
+  ['Ahşap ve masif parke ya da sistre yapıyor musunuz?', `Evet. Laminat parkenin yanında masif ve lamine ahşap parke satışı ve döşemesi, eski ahşap parkelerde de sistre ve cila yapıyoruz. Ayrıntılar <a class="link-line" href="${paths.ahsap}">ahşap ve masif parke</a> ile <a class="link-line" href="${paths.sistre}">sistre ve cila</a> sayfalarında.`],
   ['Parke ve mutfak dolabını birlikte yaptırabilir miyim?', 'Evet. Zemin ve mutfak aynı keşifte planlandığında süpürgelik, geçiş profili ve tezgâh kotu ilk seferde doğru hizalanır; ikisini tek ekiple, tek takvimle yürütüyoruz.'],
   ['Şen Parke ne zamandan beri faaliyette?', `Şen Parke ${site.since}’de ${site.founder} tarafından kuruldu; aile işletmesi olarak yaklaşık yarım asırdır İstanbul’da parke ve zemin işi yapıyor.`]
 ];

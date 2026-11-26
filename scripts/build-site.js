@@ -394,7 +394,8 @@ buildRest();
 
 /* Local parke pages + Taha Şen Yapı sub-site, appended to the sitemap */
 const { buildParkeAreas } = require('./build-parke-bolgeler');
-const parkePaths = buildParkeAreas();
+const { buildAhsapSistre } = require('./build-ahsap-sistre');
+const parkePaths = [...buildAhsapSistre(), ...buildParkeAreas()];
 console.log(`Parke bölge sayfaları: ${parkePaths.length}`);
 const { buildYapi } = require('./build-yapi');
 const yapiPaths = buildYapi();

@@ -1,0 +1,74 @@
+[
+  {
+    "slug": "masif-salon",
+    "src": "/images/ahsap/masif-salon.jpg",
+    "alt": "Cilalı masif ahşap parkeli geniş, boş bir salon",
+    "width": 1300,
+    "height": 930,
+    "license": "cc0",
+    "landing": "https://www.rawpixel.com/image/6032921/photo-image-public-domain-wooden-house"
+  },
+  {
+    "slug": "baliksirti",
+    "src": "/images/ahsap/baliksirti.jpg",
+    "alt": "Balıksırtı desenli meşe ahşap parke",
+    "width": 1300,
+    "height": 874,
+    "license": "cc0",
+    "landing": "https://www.rawpixel.com/image/5920847/photo-image-texture-public-domain-wood"
+  },
+  {
+    "slug": "masif-tahta",
+    "src": "/images/ahsap/masif-tahta.jpg",
+    "alt": "Koyu tonlu, geniş masif ahşap parke tahtaları",
+    "width": 960,
+    "height": 640,
+    "license": "cc0",
+    "landing": "https://stocksnap.io/photo/hardwood-floors-O030Z3E0CN"
+  },
+  {
+    "slug": "ahsap-oda",
+    "src": "/images/ahsap/ahsap-oda.jpg",
+    "alt": "Kızıl tonlu ahşap parkeli klasik bir oda",
+    "width": 1300,
+    "height": 867,
+    "license": "cc0",
+    "landing": "https://www.rawpixel.com/image/6057205/free-public-domain-cc0-photo"
+  },
+  {
+    "slug": "ahsap-yasam",
+    "src": "/images/ahsap/ahsap-yasam.jpg",
+    "alt": "Ahşap zeminli, aydınlık bir oturma ve yemek alanı",
+    "width": 1300,
+    "height": 861,
+    "license": "cc0",
+    "landing": "https://www.rawpixel.com/image/5938583/bold-classic-character"
+  },
+  {
+    "slug": "sistre-caillebotte",
+    "src": "/images/ahsap/sistre-caillebotte.jpg",
+    "alt": "Gustave Caillebotte, Parke Rendeleyenler (1875): ahşap zemini rendeleyen ustalar",
+    "width": 2000,
+    "height": 1405,
+    "license": "cc0",
+    "landing": "https://www.rawpixel.com/image/7665549/image-art-vintage-public-domain"
+  },
+  {
+    "slug": "sistre-cilali",
+    "src": "/images/ahsap/sistre-cilali.jpg",
+    "alt": "Sistre ve cila sonrası parlayan hasır desen ahşap parke",
+    "width": 2000,
+    "height": 1500,
+    "license": "cc0",
+    "landing": "https://wordpress.org/photos/photo/520685af56/"
+  },
+  {
+    "slug": "sistre-oncesi",
+    "src": "/images/ahsap/sistre-oncesi.jpg",
+    "alt": "Zamanla çizilmiş ve matlaşmış eski ahşap parke",
+    "width": 1300,
+    "height": 865,
+    "license": "cc0",
+    "landing": "https://www.rawpixel.com/image/3337754/free-photo-image-tabletop-cc0-creative-commons"
+  }
+]

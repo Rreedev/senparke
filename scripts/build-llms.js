@@ -38,7 +38,9 @@ function buildLlms() {
   - Yıldız Entegre (${stats.yildiz.models} model): ${byBrand('Yıldız Entegre')}
 - [MDF ve panel](${d}${paths.mdf}): Yıldız Entegre’den ${stats.mdf} ürün (MDFlam, kapak, lak ve boyalı paneller).
 - [Mutfak dolabı](${d}${paths.mutfak}): Ölçüye özel üretim; gövde, kapak, tezgâh, donanım ve montaj dahil. Onaydan sonra genellikle 3–6 haftada teslim.
-- [Markalar](${d}${paths.markalar}): AGT, Çamsan, Yıldız Entegre.
+- [Markalar](${d}${paths.markalar}): AGT, Çamsan, Yıldız Entegre (üçü de laminat parke üreticisidir).
+- [Ahşap ve masif parke](${d}${paths.ahsap}): Masif ve lamine (çok katmanlı) ahşap parke satışı ve döşemesi; düz, balıksırtı ve Macar desen. Ağaç türü ve stok bilgisi keşifte verilir.
+- [Parke sistre ve cila](${d}${paths.sistre}): Masif ve lamine ahşap parkede zımpara, onarım, derz dolgu, yeniden cila veya yağ. Laminat parke sistre edilemez.
 
 ## Hizmet süreci
 

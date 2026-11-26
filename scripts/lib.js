@@ -79,6 +79,8 @@ const abl = (w) => loc(w) + 'n';
 const paths = {
   parke: '/parke/',
   parkeArea: (slug) => `/parke/${slug}/`,
+  ahsap: '/ahsap-masif-parke/',
+  sistre: '/parke-sistre-cila/',
   laminat: '/kategori/laminat-parke/',
   mdf: '/kategori/mdf-panel/',
   mutfak: '/mutfak-dolabi/',
@@ -192,11 +194,12 @@ function megaMenu() {
           <a href="${paths.laminat}">Tüm koleksiyonlar <em>${stats.laminatCollections} seri</em></a>
         </div>
         <div>
-          <span class="mega-label">Markalar</span>
-          <a href="/markalar/#agt">AGT <em>${stats.agt.models} model</em></a>
-          <a href="/markalar/#camsan">Çamsan <em>${stats.camsan.models} model</em></a>
-          <a href="/markalar/#yildiz">Yıldız Entegre <em>${stats.yildiz.models} model</em></a>
+          <span class="mega-label">Parke türleri ve hizmetler</span>
+          <a href="${paths.laminat}">Laminat parke <em>${stats.laminat} model</em></a>
+          <a href="${paths.ahsap}">Ahşap ve masif parke <em>Satış · montaj</em></a>
+          <a href="${paths.sistre}">Parke sistre ve cila <em>Yenileme</em></a>
           <a href="${paths.mdf}">MDF &amp; Panel <em>${stats.mdf} ürün</em></a>
+          <a href="/markalar/">Markalar <em>AGT · Çamsan · Yıldız</em></a>
         </div>
       </div>
       <a class="mega-feature" href="${paths.laminat}?collection=Mood+XLarge">
@@ -340,6 +343,8 @@ function footer() {
           <a href="${paths.laminat}?brand=AGT">AGT</a>
           <a href="${paths.laminat}?brand=%C3%87amsan">Çamsan</a>
           <a href="${paths.laminat}?brand=Y%C4%B1ld%C4%B1z+Entegre">Yıldız Entegre</a>
+          <a href="${paths.ahsap}">Ahşap ve masif parke</a>
+          <a href="${paths.sistre}">Parke sistre ve cila</a>
           <a href="${paths.mdf}">MDF &amp; Panel</a>
         </div>
         <div class="footer-col">
