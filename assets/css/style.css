@@ -998,3 +998,45 @@ body:not(.is-home) main { padding-top: var(--header-h); }
   .yapi-switch { height: 30px; padding: 0 10px; margin-left: 8px; font-size: 11px; }
   .yapi-switch::before { display: none; }
 }
+
+/* ---------- Local service areas (parke bölge sayfaları) ---------- */
+.footer-areas { display: flex; flex-wrap: wrap; align-items: baseline; gap: 10px 24px; padding-top: 22px; padding-bottom: 26px; border-top: 1px solid var(--line-dark); }
+.footer-areas .footer-title { margin: 0; transition: color .3s; }
+.footer-areas .footer-title:hover { color: var(--tape); }
+.footer-areas nav { display: flex; flex-wrap: wrap; gap: 6px 18px; font-size: 14px; color: var(--on-dark-muted); }
+.footer-areas nav a { transition: color .3s; }
+.footer-areas nav a:hover { color: var(--tape); }
+
+.area-chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.area-chips a { padding: 7px 14px; border-radius: 999px; border: 1.5px solid var(--line-strong); font-size: 14px; font-weight: 500; transition: background .3s, color .3s, border-color .3s; }
+.area-chips a:hover { background: var(--ink); color: var(--paper); border-color: var(--ink); }
+.home-areas-title { margin: 28px 0 12px; }
+
+.area-copy p { color: var(--muted); }
+.area-copy .area-hoods { color: var(--ink); font-size: 15px; }
+.area-copy .check-list { margin-top: 22px; display: grid; gap: 10px; }
+.area-products { margin-top: clamp(28px, 4vw, 48px); }
+.area-more { margin-top: 28px; }
+.area-links { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr); gap: clamp(28px, 5vw, 80px); padding-top: clamp(28px, 4vw, 48px); border-top: 1.5px solid var(--ink); }
+.area-links p { max-width: 56ch; }
+.area-sibling p:not(.eyebrow) { color: var(--muted); }
+
+.area-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0; border-top: 1.5px solid var(--ink); }
+.area-card { display: flex; flex-direction: column; gap: 10px; padding: 28px 24px 30px; border-bottom: 1px solid var(--line); border-right: 1px solid var(--line); transition: background .35s; }
+.area-card:nth-child(3n) { border-right: 0; }
+.area-card:hover { background: var(--paper); }
+.area-card h2 { font-size: clamp(24px, 2.2vw, 32px); font-stretch: 112%; letter-spacing: -.02em; }
+.area-card p { color: var(--muted); font-size: 15px; flex: 1; }
+.area-card-sub { font-size: 13px; color: var(--muted); }
+.area-card.is-hub .area-card-sub { color: var(--oak); font-weight: 600; }
+
+@media (max-width: 900px) {
+  .area-links { grid-template-columns: 1fr; }
+  .area-grid { grid-template-columns: 1fr 1fr; }
+  .area-card:nth-child(3n) { border-right: 1px solid var(--line); }
+  .area-card:nth-child(2n) { border-right: 0; }
+}
+@media (max-width: 600px) {
+  .area-grid { grid-template-columns: 1fr; }
+  .area-card { border-right: 0 !important; padding-left: 0; padding-right: 0; }
+}

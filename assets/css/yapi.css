@@ -281,3 +281,6 @@ body.yapi .scroll-meter span { background: var(--brass); }
   .y-hero-media { margin: 0; border-radius: 0; height: 46vh; }
   .y-process .process-steps { grid-template-columns: 1fr; }
 }
+
+/* Cross-link to Şen Parke's page for the same district */
+.y-sibling { margin: 22px 0 0; font-size: 16px; color: var(--muted); }
