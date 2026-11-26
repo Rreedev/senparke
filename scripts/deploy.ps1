@@ -1,4 +1,4 @@
-# Siteyi derler ve GitHub Pages'e (gh-pages dalı) yayınlar.
+﻿# Siteyi derler ve GitHub Pages'e (gh-pages dalı) yayınlar.
 # Kullanım: powershell -File scripts\deploy.ps1 "değişiklik notu"
 param([string]$Message = "Site güncellemesi")
 $ErrorActionPreference = 'Stop'
