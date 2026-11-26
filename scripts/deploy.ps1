@@ -8,7 +8,7 @@ Set-Location (Split-Path $PSScriptRoot -Parent)
 node scripts/build-site.js
 git add -A
 git diff --cached --quiet
-if ($LASTEXITCODE -ne 0) { git commit -q -m $Message }
+if ($LASTEXITCODE -ne 0) { git commit -q -m $Message -m "Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>" }
 git push -q origin main
 $split = git subtree split --prefix public
 git push -f -q origin "${split}:refs/heads/gh-pages"

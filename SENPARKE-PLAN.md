@@ -172,6 +172,28 @@ Yerel önizleme: `node scripts/serve.js 4173` → `http://localhost:4173`
   Cloudflare kayıtları: apex A → 185.199.108–111.153, `www` → `rreedev.github.io`, hepsi "DNS only".
 - **senparke.xyz** (Natro; NS → `karina` + `venkat.ns.cloudflare.com`): Cloudflare Redirect Rule ile
   tüm istekler 301 → `https://senparke.com.tr/<yol>`.
+- **Durum (26.11.2026):** Natro panelinde NS değişti; .xyz registry'e geçti ve 301 yönlendirme çalışıyor.
+  .com.tr için TRABIS henüz eski Natro NS'lerini gösteriyor (whois.trabis.gov.tr ile kontrol edildi).
+
+### SEO / GEO (alan adından bağımsız, yayında)
+- Her sayfada tek `@graph`: Şen Parke (`HomeAndConstructionBusiness` + `HomeGoodsStore`, `@id` …/#sen-parke),
+  WebSite, WebPage; Taha Şen Yapı sayfalarında ayrıca `GeneralContractor` (…/yapi/#taha-sen-yapi, `parentOrganization` → Şen Parke).
+- BreadcrumbList (765 sayfa), FAQPage (20 sayfa: ana sayfa, laminat, MDF, mutfak, yapı ana sayfa, 5 hizmet, 10 bölge),
+  Service (5 hizmet sayfası), Product (739 ürün).
+- Bölge sayfalarına bölgeye özel SSS; Türkçe bulunma eki düzeltildi (Avcılar’da, Esenyurt’ta, Beylikdüzü’nde).
+- `robots.txt`: arama ve yapay zekâ botları (GPTBot, OAI-SearchBot, ClaudeBot, PerplexityBot, Google-Extended…) açıkça izinli.
+- `llms.txt`: işletme bilgileri, ürünler, süreç, Taha Şen Yapı hizmet ve bölgeleri (llmstxt.org formatı).
+- Sitemap'e eksik olan `/kategori/mdf-panel/` eklendi. og:locale, twitter:card, sayfa bazlı og:image.
+
+### Alan adı gelince yapılacaklar (sırayla)
+1. TRABIS NS'i Cloudflare gösterdiğinde: GitHub Pages sertifikası → `https_enforced = true`.
+2. **Google Search Console**: "Alan adı" mülkü `senparke.com.tr` eklendi (doğrulanmadı).
+   Cloudflare'e TXT eklenecek: `google-site-verification=YKi15HAmqhIbqiUXCG11xcmn0fIP286PhWjWH9lO6Kg` → Doğrula.
+   Sonra: Site haritası gönder (`https://senparke.com.tr/sitemap.xml`), ana sayfa + /yapi/ için dizine ekleme iste.
+3. **Bing Webmaster Tools**: Search Console'dan içe aktar (ChatGPT/Copilot aramaları Bing dizinini kullanır); sitemap gönder.
+4. **Google İşletme Profili**: Web sitesi → `https://senparke.com.tr/`.
+5. Rich Results Test ile ana sayfa, bir ürün, bir hizmet ve bir bölge sayfası kontrolü.
+
 - **senparke.com** bu Natro hesabında değil (eski siteyi yapanın hesabında). Cloudflare'de hazır bir zone var
   (A → GitHub, e-posta kayıtları Natro'da); sahibi NS'i `karina` + `venkat.ns.cloudflare.com` yaparsa .com.tr'ye yönlendirilebilir.
 
