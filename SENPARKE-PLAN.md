@@ -199,8 +199,8 @@ Yerel önizleme: `node scripts/serve.js 4173` → `http://localhost:4173`
 - **Ahşap/masif parke ve sistre (26.11.2026):** Çamsan, AGT ve Yıldız Entegre yalnızca laminat parke üretiyor (siteleri kontrol edildi);
   bu yüzden `/ahsap-masif-parke/` ve `/parke-sistre-cila/` marka kataloğu değil, hizmet sayfası (karşılaştırma tablosu, süreç, SSS, Service şeması).
   Görseller CC0/PD: `scripts/fetch-ahsap-photos.js`, lisans kaydı `brand/ahsap-src/kaynaklar.json`. Ağaç türü/stok bilgisi teyit edilince eklenebilir.
-- **Bing Webmaster:** Site eklendi; doğrulama için meta etiket, `BingSiteAuth.xml` ve CNAME hazır, ama Bing'in "Verify" butonu üç yöntemde de
-  "Unexpected error" veriyor (Bing tarafı). Daha sonra tekrar denenecek. IndexNow ile Bing'e URL'ler zaten iletiliyor.
+- **Bing Webmaster:** Doğrulandı (26.11.2026), sitemap gönderildi. Search Console'a ayrıca URL ön eki mülkü `https://senparke.com.tr/`
+  eklendi (alan adı mülkü sayesinde otomatik doğrulandı). Meta etiket, `BingSiteAuth.xml` ve CNAME doğrulama kayıtları yerinde kalmalı.
 - **Search Console (26.11.2026):** sitemap "Başarılı", 778 sayfa keşfedildi. Ürün başlık/açıklamaları tekilleştirildi, görseller sıkıştırıldı.
 - **Beklemede (kullanıcı "şimdilik bırak" dedi):** senparke.com 2006'dan beri Natro'da (NICS), sahip bilgisi gizli, bitiş 19.04.2027.
   Natro'dan alan adı sahibi belgeleriyle geri alınırsa NS → karina/venkat.ns.cloudflare.com ve .com.tr'ye 301 kurulacak.
