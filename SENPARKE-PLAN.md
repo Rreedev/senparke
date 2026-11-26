@@ -204,7 +204,7 @@ Yerel önizleme: `node scripts/serve.js 4173` → `http://localhost:4173`
 - **Search Console (26.11.2026):** sitemap "Başarılı", 778 sayfa keşfedildi. Ürün başlık/açıklamaları tekilleştirildi, görseller sıkıştırıldı.
 - **Beklemede (kullanıcı "şimdilik bırak" dedi):** senparke.com 2006'dan beri Natro'da (NICS), sahip bilgisi gizli, bitiş 19.04.2027.
   Natro'dan alan adı sahibi belgeleriyle geri alınırsa NS → karina/venkat.ns.cloudflare.com ve .com.tr'ye 301 kurulacak.
-  Google İşletme Profili web sitesi hâlâ senparke.com (rreemanvalo hesabının profile erişimi yok). Yandex Business sahiplenme önerildi.
+  Google İşletme Profili web sitesi kullanıcı tarafından `https://senparke.com.tr/` yapıldı (26.11.2026). Yandex Business sahiplenme önerildi.
 - **IndexNow** (Bing/Yandex): anahtar `scripts/indexnow-key.js`, gönderim `node scripts/indexnow.js` (her büyük güncellemeden sonra).
 
 ### Alan adı gelince yapılacaklar (sırayla)
