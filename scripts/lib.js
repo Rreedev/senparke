@@ -488,6 +488,7 @@ function pageShell({ title, description, pathName = '/', active = '', body = '',
   <title>${esc(fullTitle)}</title>
   <meta name="description" content="${esc(desc)}">
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+  ${pathName === '/' ? '<meta name="msvalidate.01" content="93BAF3BAFC7EBA5718A2D204DF81B434">' : ''}
   <link rel="canonical" href="${esc(canonical)}">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="tr_TR">
