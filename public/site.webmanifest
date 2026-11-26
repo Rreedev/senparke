@@ -1,0 +1,22 @@
+{
+  "lang": "tr",
+  "display": "standalone",
+  "name": "Şen Parke — Laminat Parke, MDF ve Mutfak Dolabı",
+  "short_name": "Şen Parke",
+  "start_url": "/",
+  "scope": "/",
+  "background_color": "#f6f5f1",
+  "theme_color": "#2e2119",
+  "icons": [
+    {
+      "src": "/assets/logo/favicon-180.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    },
+    {
+      "src": "/assets/logo/favicon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

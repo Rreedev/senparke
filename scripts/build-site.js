@@ -424,6 +424,23 @@ Object.entries(REDIRECTS).forEach(([from, to]) => {
 `);
 });
 
+/* Web app manifests (install prompt, home-screen icon, theme colour in mobile search) */
+const manifest = (o) => JSON.stringify(Object.assign({ lang: 'tr', display: 'standalone' }, o), null, 2);
+fs.writeFileSync(pathMod.join(__dirname, '..', 'public', 'site.webmanifest'), manifest({
+  name: 'Şen Parke — Laminat Parke, MDF ve Mutfak Dolabı', short_name: 'Şen Parke', start_url: '/', scope: '/',
+  background_color: '#f6f5f1', theme_color: '#2e2119',
+  icons: [{ src: '/assets/logo/favicon-180.png', sizes: '180x180', type: 'image/png' }, { src: '/assets/logo/favicon-512.png', sizes: '512x512', type: 'image/png' }]
+}));
+fs.writeFileSync(pathMod.join(__dirname, '..', 'public', 'yapi', 'site.webmanifest'), manifest({
+  name: 'Taha Şen Yapı — Kentsel Dönüşüm ve Kat Karşılığı', short_name: 'Taha Şen Yapı', start_url: '/yapi/', scope: '/yapi/',
+  background_color: '#121110', theme_color: '#121110',
+  icons: [{ src: '/assets/logo/tahasen-favicon-180.png', sizes: '180x180', type: 'image/png' }, { src: '/assets/logo/tahasen-favicon-512.png', sizes: '512x512', type: 'image/png' }]
+}));
+
+/* IndexNow (Bing, Yandex, Seznam, Naver): key file at the root; scripts/indexnow.js submits the URLs */
+const { INDEXNOW_KEY } = require('./indexnow-key');
+fs.writeFileSync(pathMod.join(__dirname, '..', 'public', `${INDEXNOW_KEY}.txt`), INDEXNOW_KEY);
+
 /* llms.txt for AI answer engines */
 const { buildLlms } = require('./build-llms');
 console.log(`llms.txt: ${buildLlms()} karakter`);

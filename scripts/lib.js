@@ -502,6 +502,8 @@ function pageShell({ title, description, pathName = '/', active = '', body = '',
   <meta name="theme-color" content="#2e2119">
   <link rel="icon" href="/assets/logo/favicon-32.png" type="image/png" sizes="32x32">
   <link rel="apple-touch-icon" href="/assets/logo/favicon-180.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="sitemap" type="application/xml" href="/sitemap.xml">
   <script>(function(d){d.classList.add('js');try{if(matchMedia('(prefers-reduced-motion: reduce)').matches)d.classList.add('reduced');if(sessionStorage.getItem('sp-nav'))d.classList.add('is-arriving')}catch(e){}})(document.documentElement);</script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

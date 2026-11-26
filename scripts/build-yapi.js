@@ -302,6 +302,8 @@ function yShell({ title, description, pathName, active = '', body, bodyClass = '
   <meta name="theme-color" content="#121110">
   <link rel="icon" href="/assets/logo/tahasen-favicon-32.png" type="image/png" sizes="32x32">
   <link rel="apple-touch-icon" href="/assets/logo/tahasen-favicon-180.png">
+  <link rel="manifest" href="/yapi/site.webmanifest">
+  <link rel="sitemap" type="application/xml" href="/sitemap.xml">
   <script>(function(d){d.classList.add('js');try{if(matchMedia('(prefers-reduced-motion: reduce)').matches)d.classList.add('reduced');if(sessionStorage.getItem('sp-nav'))d.classList.add('is-arriving')}catch(e){}})(document.documentElement);</script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

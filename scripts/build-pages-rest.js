@@ -376,8 +376,9 @@ Allow: /
 Sitemap: ${site.domain}/sitemap.xml
 `);
 
+  const showroom = ['magaza-cephesi', 'showroom-genel', 'showroom-numune-standi', 'showroom-ofis'].map(n => `/images/showroom/${n}.jpg`);
   const urls = [
-    { loc: '/', priority: '1.0', changefreq: 'weekly' },
+    { loc: '/', priority: '1.0', changefreq: 'weekly', images: showroom },
     { loc: paths.laminat, priority: '0.9', changefreq: 'weekly' },
     { loc: paths.mdf, priority: '0.8', changefreq: 'weekly' },
     { loc: paths.mutfak, priority: '0.9', changefreq: 'monthly' },
@@ -388,16 +389,20 @@ Sitemap: ${site.domain}/sitemap.xml
     { loc: paths.teklif, priority: '0.8', changefreq: 'yearly' },
     { loc: '/kvkk/', priority: '0.2', changefreq: 'yearly' },
     { loc: '/cerez-politikasi/', priority: '0.2', changefreq: 'yearly' },
-    ...products.map(p => ({ loc: '/' + p.url, priority: '0.6', changefreq: 'monthly' }))
+    ...products.map(p => ({ loc: '/' + p.url, priority: '0.6', changefreq: 'monthly', images: (p.images || []).slice(0, 4) }))
   ];
+  urls.find(u => u.loc === paths.galeri).images = showroom;
   const today = new Date().toISOString().slice(0, 10);
+  const x = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;');
+  const abs = (src) => site.domain + '/' + String(src).replace(/^\//, '');
   const xml = `<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
 ${urls.map(u => `  <url>
-    <loc>${site.domain}${u.loc}</loc>
+    <loc>${x(site.domain + u.loc)}</loc>
     <lastmod>${today}</lastmod>
     <changefreq>${u.changefreq}</changefreq>
-    <priority>${u.priority}</priority>
+    <priority>${u.priority}</priority>${(u.images || []).map(i => `
+    <image:image><image:loc>${x(abs(i))}</image:loc></image:image>`).join('')}
   </url>`).join('\n')}
 </urlset>
 `;
