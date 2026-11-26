@@ -184,6 +184,11 @@ Yerel önizleme: `node scripts/serve.js 4173` → `http://localhost:4173`
 - `robots.txt`: arama ve yapay zekâ botları (GPTBot, OAI-SearchBot, ClaudeBot, PerplexityBot, Google-Extended…) açıkça izinli.
 - `llms.txt`: işletme bilgileri, ürünler, süreç, Taha Şen Yapı hizmet ve bölgeleri (llmstxt.org formatı).
 - Sitemap'e eksik olan `/kategori/mdf-panel/` eklendi. og:locale, twitter:card, sayfa bazlı og:image.
+- **Yerel SEO:** `/parke/` + 10 bölge sayfası (`/parke/<bölge>/`, `scripts/build-parke-bolgeler.js`): bölgenin konut yapısına göre
+  ayrı metin, mahalle adları, bölgeye özel seri önerisi (4 koleksiyon + 8 ürün), 5 SSS, Service şeması, Taha Şen Yapı'nın aynı bölge
+  sayfasına çapraz bağlantı. Tüm sayfaların footer'ında ve ana sayfada bölge bağlantıları. Yapı bölge sayfalarına "müteahhit seçimi" SSS'i.
+  Başlıklar: "Avcılar Laminat Parke…", "Avcılar Kentsel Dönüşüm, Kat Karşılığı ve Müteahhitlik".
+- **Not:** Kullanıcı listesindeki "Gülpınar", Beylikdüzü'nde resmi adı "Gürpınar" olan mahalle olabilir; teyit edilecek.
 
 ### Alan adı gelince yapılacaklar (sırayla)
 1. TRABIS NS'i Cloudflare gösterdiğinde: GitHub Pages sertifikası → `https_enforced = true`.
