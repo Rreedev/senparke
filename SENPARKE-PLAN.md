@@ -196,6 +196,11 @@ Yerel önizleme: `node scripts/serve.js 4173` → `http://localhost:4173`
 - **IndexNow:** 778 URL kabul edildi (HTTP 200).
 - **Bekleyen:** Google İşletme Profili web sitesi alanı → `https://senparke.com.tr/` (Brave'deki Google hesabının profile erişimi yok);
   Bing Webmaster (Microsoft/Google hesabıyla giriş gerekiyor, sonra Search Console'dan içe aktar).
+- **Ahşap/masif parke ve sistre (26.11.2026):** Çamsan, AGT ve Yıldız Entegre yalnızca laminat parke üretiyor (siteleri kontrol edildi);
+  bu yüzden `/ahsap-masif-parke/` ve `/parke-sistre-cila/` marka kataloğu değil, hizmet sayfası (karşılaştırma tablosu, süreç, SSS, Service şeması).
+  Görseller CC0/PD: `scripts/fetch-ahsap-photos.js`, lisans kaydı `brand/ahsap-src/kaynaklar.json`. Ağaç türü/stok bilgisi teyit edilince eklenebilir.
+- **Bing Webmaster:** Site eklendi; doğrulama için meta etiket, `BingSiteAuth.xml` ve CNAME hazır, ama Bing'in "Verify" butonu üç yöntemde de
+  "Unexpected error" veriyor (Bing tarafı). Daha sonra tekrar denenecek. IndexNow ile Bing'e URL'ler zaten iletiliyor.
 - **IndexNow** (Bing/Yandex): anahtar `scripts/indexnow-key.js`, gönderim `node scripts/indexnow.js` (her büyük güncellemeden sonra).
 
 ### Alan adı gelince yapılacaklar (sırayla)
