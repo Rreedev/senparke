@@ -191,6 +191,11 @@ Yerel önizleme: `node scripts/serve.js 4173` → `http://localhost:4173`
 - "Gülpınar" → **Gürpınar** olarak düzeltildi (kullanıcı onayı); eski `/…/gulpinar/` adresleri yönlendirme sayfası.
 - **Canlı (26.11.2026 19:31):** https://senparke.com.tr, HTTPS zorunlu, http → https 301, senparke.xyz → 301.
 - Site haritası görselli (1640 görsel), `site.webmanifest` (Şen Parke ve /yapi/), `<link rel="sitemap">`.
+- **Search Console:** `sc-domain:senparke.com.tr` DNS TXT ile doğrulandı (rreemanvalo hesabı); sitemap gönderildi
+  (ilk okuma "Getirilemedi"; DNS geçişinden hemen sonra normal, birkaç gün içinde tekrar okunur — gerekirse yeniden gönder).
+- **IndexNow:** 778 URL kabul edildi (HTTP 200).
+- **Bekleyen:** Google İşletme Profili web sitesi alanı → `https://senparke.com.tr/` (Brave'deki Google hesabının profile erişimi yok);
+  Bing Webmaster (Microsoft/Google hesabıyla giriş gerekiyor, sonra Search Console'dan içe aktar).
 - **IndexNow** (Bing/Yandex): anahtar `scripts/indexnow-key.js`, gönderim `node scripts/indexnow.js` (her büyük güncellemeden sonra).
 
 ### Alan adı gelince yapılacaklar (sırayla)
