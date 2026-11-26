@@ -1,0 +1,22 @@
+{
+  "lang": "tr",
+  "display": "standalone",
+  "name": "Taha Şen Yapı — Kentsel Dönüşüm ve Kat Karşılığı",
+  "short_name": "Taha Şen Yapı",
+  "start_url": "/yapi/",
+  "scope": "/yapi/",
+  "background_color": "#121110",
+  "theme_color": "#121110",
+  "icons": [
+    {
+      "src": "/assets/logo/tahasen-favicon-180.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    },
+    {
+      "src": "/assets/logo/tahasen-favicon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
