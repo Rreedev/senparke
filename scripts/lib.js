@@ -30,7 +30,7 @@ const site = {
   google: 'https://www.google.com/maps?cid=6902869844658238653',
   maps: 'https://www.google.com/maps?cid=6902869844658238653',
   mapsEmbed: 'https://maps.google.com/maps?cid=6902869844658238653&hl=tr&z=17&output=embed',
-  domain: 'https://senparke.com'
+  domain: 'https://senparke.com.tr'
 };
 
 /* Catalogue figures, computed from the data so copy never goes stale */

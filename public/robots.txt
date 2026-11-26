@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://senparke.com/sitemap.xml
+Sitemap: https://senparke.com.tr/sitemap.xml
