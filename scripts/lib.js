@@ -435,7 +435,9 @@ function businessNode() {
     '@type': ['HomeAndConstructionBusiness', 'HomeGoodsStore'],
     '@id': IDS.business,
     name: 'Şen Parke',
-    alternateName: ['Şenparke', 'Sen Parke'],
+    alternateName: ['Şenparke', 'Sen Parke', 'Şen Parke Avcılar'],
+    /* A separately owned business uses the same name; this line tells search engines which one this is */
+    disambiguatingDescription: 'Avcılar Cihangir Mahallesi’ndeki Şen Parke: showroom, ofis ve 1000 m² depo aynı adreste; web sitesi senparke.com.tr.',
     legalName: site.legal,
     description: `1978’den beri İstanbul Avcılar’da laminat parke, MDF panel ve mutfak dolabı satışı ve montajı. AGT, Çamsan ve Yıldız Entegre’den ${stats.laminat} laminat parke modeli ve ${stats.mdf} MDF ürünü; showroom, ofis ve 1000 m² depo aynı adreste.`,
     url: `${site.domain}/`,

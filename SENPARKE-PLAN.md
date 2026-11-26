@@ -202,8 +202,9 @@ Yerel önizleme: `node scripts/serve.js 4173` → `http://localhost:4173`
 - **Bing Webmaster:** Doğrulandı (26.11.2026), sitemap gönderildi. Search Console'a ayrıca URL ön eki mülkü `https://senparke.com.tr/`
   eklendi (alan adı mülkü sayesinde otomatik doğrulandı). Meta etiket, `BingSiteAuth.xml` ve CNAME doğrulama kayıtları yerinde kalmalı.
 - **Search Console (26.11.2026):** sitemap "Başarılı", 778 sayfa keşfedildi. Ürün başlık/açıklamaları tekilleştirildi, görseller sıkıştırıldı.
-- **Beklemede (kullanıcı "şimdilik bırak" dedi):** senparke.com 2006'dan beri Natro'da (NICS), sahip bilgisi gizli, bitiş 19.04.2027.
-  Natro'dan alan adı sahibi belgeleriyle geri alınırsa NS → karina/venkat.ns.cloudflare.com ve .com.tr'ye 301 kurulacak.
+- **senparke.com AYRI BİR İŞLETME:** Akraba (senparke.com.tr sahibinin amcası) ama ayrı ve rakip firma; merkezi Başakşehir OSB.
+  Bu alan adı alınmaya/yönlendirilmeye çalışılmayacak; sitede bu firmadan bahsedilmeyecek. Rekabet yalnızca kendi sitemizi
+  güçlendirerek yapılır: "Avcılar" vurgusu, işletme profili, yorumlar, yerel sayfalar.
   Google İşletme Profili web sitesi kullanıcı tarafından `https://senparke.com.tr/` yapıldı (26.11.2026). Yandex Business sahiplenme önerildi.
 - **IndexNow** (Bing/Yandex): anahtar `scripts/indexnow-key.js`, gönderim `node scripts/indexnow.js` (her büyük güncellemeden sonra).
 
