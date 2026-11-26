@@ -34,7 +34,7 @@
 
 Merkez Avcılar; İstanbul içinde keşif ve ölçü ücretsiz. Bölge sayfaları:
 - [Büyükçekmece parke](https://senparke.com.tr/parke/buyukcekmece/)
-- [Gülpınar parke (Beylikdüzü)](https://senparke.com.tr/parke/gulpinar/)
+- [Gürpınar parke (Beylikdüzü)](https://senparke.com.tr/parke/gurpinar/)
 - [Yakuplu parke (Beylikdüzü)](https://senparke.com.tr/parke/yakuplu/)
 - [Beylikdüzü parke](https://senparke.com.tr/parke/beylikduzu/)
 - [Esenyurt parke](https://senparke.com.tr/parke/esenyurt/)
@@ -67,7 +67,7 @@ Avcılar merkezli yapı firması. İletişim: Taha ŞEN 0553 728 17 55. Ön gör
 ### Bölgeler
 
 - [Büyükçekmece](https://senparke.com.tr/yapi/bolgeler/buyukcekmece/)
-- [Gülpınar (Beylikdüzü)](https://senparke.com.tr/yapi/bolgeler/gulpinar/)
+- [Gürpınar (Beylikdüzü)](https://senparke.com.tr/yapi/bolgeler/gurpinar/)
 - [Yakuplu (Beylikdüzü)](https://senparke.com.tr/yapi/bolgeler/yakuplu/)
 - [Beylikdüzü](https://senparke.com.tr/yapi/bolgeler/beylikduzu/)
 - [Esenyurt](https://senparke.com.tr/yapi/bolgeler/esenyurt/)

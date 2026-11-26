@@ -58,7 +58,7 @@ const stats = (() => {
    and Taha Şen Yapı (/yapi/bolgeler/<slug>/) so the two sites cross-link. */
 const AREAS = [
   { slug: 'buyukcekmece', name: 'Büyükçekmece', parent: '' },
-  { slug: 'gulpinar', name: 'Gülpınar', parent: 'Beylikdüzü' },
+  { slug: 'gurpinar', name: 'Gürpınar', parent: 'Beylikdüzü' },
   { slug: 'yakuplu', name: 'Yakuplu', parent: 'Beylikdüzü' },
   { slug: 'beylikduzu', name: 'Beylikdüzü', parent: '' },
   { slug: 'esenyurt', name: 'Esenyurt', parent: '' },

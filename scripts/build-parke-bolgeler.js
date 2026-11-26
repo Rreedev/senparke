@@ -44,15 +44,15 @@ const CONTENT = {
     ],
     tip: 'Beylikdüzü’ndeki yeni dairelerde uzun ve geniş tahtalı serileri öneriyoruz: AGT Pera Icon ve Mood XLarge, Çamsan Platinum, Yıldız Entegre Premium XL. Geniş tahta, salon ve koridor gibi uzun mekânları daha ferah gösterir.'
   },
-  gulpinar: {
+  gurpinar: {
     profile: 'fresh',
-    hoods: ['Gülpınar', 'Beylikdüzü'],
-    lead: 'Beylikdüzü Gülpınar’daki yeni konut ve sitelerde laminat parke seçimi, keşfi ve montajı. Showroomumuz Avcılar’da, E-5 üzerinden kısa bir yol.',
+    hoods: ['Gürpınar', 'Beylikdüzü'],
+    lead: 'Beylikdüzü Gürpınar’daki yeni konut ve sitelerde laminat parke seçimi, keşfi ve montajı. Showroomumuz Avcılar’da, E-5 üzerinden kısa bir yol.',
     body: [
-      'Gülpınar’da yeni yapılan konutlar ve siteler ağırlıkta. Taşınmadan önce zemini yenilemek isteyen ev sahipleriyle, anahtar teslim alınır alınmaz keşfe gelip ölçüyü alıyoruz.',
+      'Gürpınar’da yeni yapılan konutlar ve siteler ağırlıkta. Taşınmadan önce zemini yenilemek isteyen ev sahipleriyle, anahtar teslim alınır alınmaz keşfe gelip ölçüyü alıyoruz.',
       'Yeni binalarda şapın kuruluğunu ve düzgünlüğünü keşifte ölçüyor, gerekiyorsa montajdan önce yapılması gerekenleri yazılı olarak bildiriyoruz.'
     ],
-    tip: 'Gülpınar’daki yeni dairelerde açık ve orta tonlarda serileri öneriyoruz: AGT Pruva XLarge ve Pera Collection 8 mm, Çamsan Belanda, Yıldız Entegre Premium Medium. Açık tonlar yeni daireyi aydınlık gösterir ve mobilya seçimini kolaylaştırır.'
+    tip: 'Gürpınar’daki yeni dairelerde açık ve orta tonlarda serileri öneriyoruz: AGT Pruva XLarge ve Pera Collection 8 mm, Çamsan Belanda, Yıldız Entegre Premium Medium. Açık tonlar yeni daireyi aydınlık gösterir ve mobilya seçimini kolaylaştırır.'
   },
   yakuplu: {
     profile: 'mixed',
@@ -280,7 +280,7 @@ function hubPage() {
 
   write('parke/index.html', pageShell({
     title: 'Parke Hizmet Bölgeleri — Avcılar, Beylikdüzü, Esenyurt, Bakırköy',
-    description: 'Şen Parke laminat parke hizmet bölgeleri: Avcılar, Beylikdüzü, Gülpınar, Yakuplu, Esenyurt, Küçükçekmece, Sefaköy, Şirinevler, Bakırköy ve Büyükçekmece. Ücretsiz keşif, ölçü ve montaj.',
+    description: 'Şen Parke laminat parke hizmet bölgeleri: Avcılar, Beylikdüzü, Gürpınar, Yakuplu, Esenyurt, Küçükçekmece, Sefaköy, Şirinevler, Bakırköy ve Büyükçekmece. Ücretsiz keşif, ölçü ve montaj.',
     pathName: paths.parke,
     active: 'Parke',
     body,

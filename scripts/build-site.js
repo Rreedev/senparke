@@ -404,6 +404,26 @@ const extra = [...parkePaths, ...yapiPaths].map(p => `  <url>\n    <loc>${site.d
 fs.writeFileSync(smPath, fs.readFileSync(smPath, 'utf8').replace('</urlset>', extra + '\n</urlset>'));
 console.log(`Taha Şen Yapı: ${yapiPaths.length} sayfa`);
 
+/* Moved URLs. GitHub Pages has no server-side 301, so each old path gets a tiny page with a
+   canonical link, noindex and an instant meta refresh: Google treats this as a redirect. */
+const REDIRECTS = {
+  '/parke/gulpinar/': '/parke/gurpinar/',
+  '/yapi/bolgeler/gulpinar/': '/yapi/bolgeler/gurpinar/'
+};
+Object.entries(REDIRECTS).forEach(([from, to]) => {
+  const file = pathMod.join(__dirname, '..', 'public', from, 'index.html');
+  fs.mkdirSync(pathMod.dirname(file), { recursive: true });
+  fs.writeFileSync(file, `<!doctype html>
+<html lang="tr"><head><meta charset="utf-8">
+<title>Taşındı</title>
+<link rel="canonical" href="${site.domain}${to}">
+<meta name="robots" content="noindex, follow">
+<meta http-equiv="refresh" content="0; url=${to}">
+<script>location.replace(${JSON.stringify(to)} + location.search + location.hash);</script>
+</head><body><p>Bu sayfa taşındı: <a href="${to}">${site.domain}${to}</a></p></body></html>
+`);
+});
+
 /* llms.txt for AI answer engines */
 const { buildLlms } = require('./build-llms');
 console.log(`llms.txt: ${buildLlms()} karakter`);

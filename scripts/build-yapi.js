@@ -110,8 +110,8 @@ const SERVICES = [
 const DISTRICTS = [
   { slug: 'buyukcekmece', name: 'Büyükçekmece', parent: '', kind: 'new', img: 'konut-yesil',
     note: 'Müstakil yapıların ve yeni konut alanlarının yoğun olduğu Büyükçekmece’de en çok sıfırdan yapı ile mimari dokunuşlar ve yaşam alanı dizaynı projelerinde çalışıyoruz.' },
-  { slug: 'gulpinar', name: 'Gülpınar', parent: 'Beylikdüzü', kind: 'new', img: 'konut-cephe',
-    note: 'Beylikdüzü’nün Gülpınar Mahallesi’nde arsa ve eski yapı sahipleriyle kat karşılığı ve sıfırdan yapı projeleri planlıyoruz.' },
+  { slug: 'gurpinar', name: 'Gürpınar', parent: 'Beylikdüzü', kind: 'new', img: 'konut-cephe',
+    note: 'Beylikdüzü’nün Gürpınar Mahallesi’nde arsa ve eski yapı sahipleriyle kat karşılığı ve sıfırdan yapı projeleri planlıyoruz.' },
   { slug: 'yakuplu', name: 'Yakuplu', parent: 'Beylikdüzü', kind: 'mixed', img: 'santiye-vinc',
     note: 'Yakuplu’da eski yapıların yenilenmesi ile yeni bina projeleri bir arada; kat karşılığı ve kentsel dönüşüm görüşmelerini yerinde yapıyoruz.' },
   { slug: 'beylikduzu', name: 'Beylikdüzü', parent: '', kind: 'new', img: 'konut-kule',
