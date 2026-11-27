@@ -3,8 +3,8 @@
   "display": "standalone",
   "name": "Taha Şen Yapı — Kentsel Dönüşüm ve Kat Karşılığı",
   "short_name": "Taha Şen Yapı",
-  "start_url": "/yapi/",
-  "scope": "/yapi/",
+  "start_url": "/tahasenyapi/",
+  "scope": "/tahasenyapi/",
   "background_color": "#121110",
   "theme_color": "#121110",
   "icons": [
