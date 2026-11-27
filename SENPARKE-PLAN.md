@@ -120,7 +120,7 @@ Mobilyası Mağazası) eklendi, logo/kapak ve 9 mekân fotoğrafı `google-profi
 senparke.com.tr'ye çevirmişti — o alan adı yok; kontrol edin). Sitedeki harita/yol tarifi bağlantıları profile
 (cid=6902869844658238653) gider. Hesapta ayrıca eski No: 47 adresli, doğrulanmamış "Kopya" bir kayıt var.
 
-Taha Şen Yapı alt sitesi (/yapi/, 17 sayfa): `scripts/build-yapi.js` (içerik + sayfalar), `public/assets/css/yapi.css`,
+Taha Şen Yapı alt sitesi (/tahasenyapi/, 17 sayfa): `scripts/build-yapi.js` (içerik + sayfalar), `public/assets/css/yapi.css`,
 `public/assets/js/yapi.js`. Palet: fırçalanmış pirinç #b08d57, mat siyah #121110, kırık beyaz #efe9de. Logo: brand/tahasen-logo-original.png → `node scripts/make-yapi-logo.js`. Görseller yalnızca CC0 / kamu malı
 (Openverse) → `node scripts/fetch-yapi-photos.js` (lisans kaydı: brand/yapi-src/kaynaklar.json) →
 `node scripts/grade-yapi-photos.js` (palete göre renklendirme). Sitede "örnek görsel" notu var; gerçek proje
@@ -177,7 +177,7 @@ Yerel önizleme: `node scripts/serve.js 4173` → `http://localhost:4173`
 
 ### SEO / GEO (alan adından bağımsız, yayında)
 - Her sayfada tek `@graph`: Şen Parke (`HomeAndConstructionBusiness` + `HomeGoodsStore`, `@id` …/#sen-parke),
-  WebSite, WebPage; Taha Şen Yapı sayfalarında ayrıca `GeneralContractor` (…/yapi/#taha-sen-yapi, `parentOrganization` → Şen Parke).
+  WebSite, WebPage; Taha Şen Yapı sayfalarında ayrıca `GeneralContractor` (…/tahasenyapi/#taha-sen-yapi, `parentOrganization` → Şen Parke).
 - BreadcrumbList (765 sayfa), FAQPage (20 sayfa: ana sayfa, laminat, MDF, mutfak, yapı ana sayfa, 5 hizmet, 10 bölge),
   Service (5 hizmet sayfası), Product (739 ürün).
 - Bölge sayfalarına bölgeye özel SSS; Türkçe bulunma eki düzeltildi (Avcılar’da, Esenyurt’ta, Beylikdüzü’nde).
@@ -190,7 +190,7 @@ Yerel önizleme: `node scripts/serve.js 4173` → `http://localhost:4173`
   Başlıklar: "Avcılar Laminat Parke…", "Avcılar Kentsel Dönüşüm, Kat Karşılığı ve Müteahhitlik".
 - "Gülpınar" → **Gürpınar** olarak düzeltildi (kullanıcı onayı); eski `/…/gulpinar/` adresleri yönlendirme sayfası.
 - **Canlı (26.11.2026 19:31):** https://senparke.com.tr, HTTPS zorunlu, http → https 301, senparke.xyz → 301.
-- Site haritası görselli (1640 görsel), `site.webmanifest` (Şen Parke ve /yapi/), `<link rel="sitemap">`.
+- Site haritası görselli (1640 görsel), `site.webmanifest` (Şen Parke ve /tahasenyapi/), `<link rel="sitemap">`.
 - **Search Console:** `sc-domain:senparke.com.tr` DNS TXT ile doğrulandı (rreemanvalo hesabı); sitemap gönderildi
   (ilk okuma "Getirilemedi"; DNS geçişinden hemen sonra normal, birkaç gün içinde tekrar okunur — gerekirse yeniden gönder).
 - **IndexNow:** 778 URL kabul edildi (HTTP 200).
@@ -212,7 +212,7 @@ Yerel önizleme: `node scripts/serve.js 4173` → `http://localhost:4173`
 1. TRABIS NS'i Cloudflare gösterdiğinde: GitHub Pages sertifikası → `https_enforced = true`.
 2. **Google Search Console**: "Alan adı" mülkü `senparke.com.tr` eklendi (doğrulanmadı).
    Cloudflare'e TXT eklenecek: `google-site-verification=YKi15HAmqhIbqiUXCG11xcmn0fIP286PhWjWH9lO6Kg` → Doğrula.
-   Sonra: Site haritası gönder (`https://senparke.com.tr/sitemap.xml`), ana sayfa + /yapi/ için dizine ekleme iste.
+   Sonra: Site haritası gönder (`https://senparke.com.tr/sitemap.xml`), ana sayfa + /tahasenyapi/ için dizine ekleme iste.
 3. **Bing Webmaster Tools**: Search Console'dan içe aktar (ChatGPT/Copilot aramaları Bing dizinini kullanır); sitemap gönder.
 4. **Google İşletme Profili**: Web sitesi → `https://senparke.com.tr/`.
 5. Rich Results Test ile ana sayfa, bir ürün, bir hizmet ve bir bölge sayfası kontrolü.
@@ -261,3 +261,5 @@ Yerel önizleme: `node scripts/serve.js 4173` → `http://localhost:4173`
 
 *Dosya yapısı: `public/` (yayınlanacak site) · `scripts/` (veri + site üretimi) · `data/` (ham kaynak veriler)*
 *Toplam: 301 sayfa · ~630 yerel görsel · tek CSS tasarım sistemi · bağımlılıksız vanilla JS (~25 KB)*
+
+- **27.11.2026:** Taha Şen Yapı adresi `/yapi/` → `/tahasenyapi/` oldu; eski 17 `/yapi/...` adresi yönlendirme sayfası (noindex + canonical + anında yönlendirme).
