@@ -60,24 +60,24 @@ Avcılar merkezli yapı firması. İletişim: Taha ŞEN 0553 728 17 55. Ön gör
 
 ### Hizmetler
 
-- [Kentsel dönüşüm](https://senparke.com.tr/yapi/hizmetler/kentsel-donusum/): Riskli yapınızı, hak kaybı yaşamadan güvenli ve değerli bir binaya dönüştürüyoruz.
-- [Kat karşılığı inşaat](https://senparke.com.tr/yapi/hizmetler/kat-karsiligi/): Arsanızı ya da eski binanızı, size en adil paylaşımla yeni bir yapıya dönüştürüyoruz.
-- [Sıfırdan yapı](https://senparke.com.tr/yapi/hizmetler/sifirdan-yapi/): Arsanızdan anahtar teslim binaya: proje, ruhsat, inşaat ve iskân tek elden.
-- [Renovasyon ve restorasyon](https://senparke.com.tr/yapi/hizmetler/renovasyon-restorasyon/): Mevcut binanızı yıkmadan yeniliyoruz: cephe, ortak alanlar, daire içleri ve tarihi dokular.
-- [Mimari Dokunuşlar ve Yaşam Alanı Dizaynı](https://senparke.com.tr/yapi/hizmetler/mimari-dokunuslar/): Binanın dışındaki karakteri ve dairenin içindeki yaşamı birlikte tasarlıyoruz: cephe dili, giriş, ışık, plan ve malzeme.
+- [Kentsel dönüşüm](https://senparke.com.tr/tahasenyapi/hizmetler/kentsel-donusum/): Riskli yapınızı, hak kaybı yaşamadan güvenli ve değerli bir binaya dönüştürüyoruz.
+- [Kat karşılığı inşaat](https://senparke.com.tr/tahasenyapi/hizmetler/kat-karsiligi/): Arsanızı ya da eski binanızı, size en adil paylaşımla yeni bir yapıya dönüştürüyoruz.
+- [Sıfırdan yapı](https://senparke.com.tr/tahasenyapi/hizmetler/sifirdan-yapi/): Arsanızdan anahtar teslim binaya: proje, ruhsat, inşaat ve iskân tek elden.
+- [Renovasyon ve restorasyon](https://senparke.com.tr/tahasenyapi/hizmetler/renovasyon-restorasyon/): Mevcut binanızı yıkmadan yeniliyoruz: cephe, ortak alanlar, daire içleri ve tarihi dokular.
+- [Mimari Dokunuşlar ve Yaşam Alanı Dizaynı](https://senparke.com.tr/tahasenyapi/hizmetler/mimari-dokunuslar/): Binanın dışındaki karakteri ve dairenin içindeki yaşamı birlikte tasarlıyoruz: cephe dili, giriş, ışık, plan ve malzeme.
 
 ### Bölgeler
 
-- [Büyükçekmece](https://senparke.com.tr/yapi/bolgeler/buyukcekmece/)
-- [Gürpınar (Beylikdüzü)](https://senparke.com.tr/yapi/bolgeler/gurpinar/)
-- [Yakuplu (Beylikdüzü)](https://senparke.com.tr/yapi/bolgeler/yakuplu/)
-- [Beylikdüzü](https://senparke.com.tr/yapi/bolgeler/beylikduzu/)
-- [Esenyurt](https://senparke.com.tr/yapi/bolgeler/esenyurt/)
-- [Avcılar](https://senparke.com.tr/yapi/bolgeler/avcilar/): merkez
-- [Küçükçekmece](https://senparke.com.tr/yapi/bolgeler/kucukcekmece/)
-- [Sefaköy (Küçükçekmece)](https://senparke.com.tr/yapi/bolgeler/sefakoy/)
-- [Şirinevler (Bahçelievler)](https://senparke.com.tr/yapi/bolgeler/sirinevler/)
-- [Bakırköy](https://senparke.com.tr/yapi/bolgeler/bakirkoy/)
+- [Büyükçekmece](https://senparke.com.tr/tahasenyapi/bolgeler/buyukcekmece/)
+- [Gürpınar (Beylikdüzü)](https://senparke.com.tr/tahasenyapi/bolgeler/gurpinar/)
+- [Yakuplu (Beylikdüzü)](https://senparke.com.tr/tahasenyapi/bolgeler/yakuplu/)
+- [Beylikdüzü](https://senparke.com.tr/tahasenyapi/bolgeler/beylikduzu/)
+- [Esenyurt](https://senparke.com.tr/tahasenyapi/bolgeler/esenyurt/)
+- [Avcılar](https://senparke.com.tr/tahasenyapi/bolgeler/avcilar/): merkez
+- [Küçükçekmece](https://senparke.com.tr/tahasenyapi/bolgeler/kucukcekmece/)
+- [Sefaköy (Küçükçekmece)](https://senparke.com.tr/tahasenyapi/bolgeler/sefakoy/)
+- [Şirinevler (Bahçelievler)](https://senparke.com.tr/tahasenyapi/bolgeler/sirinevler/)
+- [Bakırköy](https://senparke.com.tr/tahasenyapi/bolgeler/bakirkoy/)
 
 ### Önemli notlar
 

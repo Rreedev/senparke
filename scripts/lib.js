@@ -55,7 +55,7 @@ const stats = (() => {
 })();
 
 /* Service areas, west to east along the E-5. Shared by Şen Parke (/parke/<slug>/)
-   and Taha Şen Yapı (/yapi/bolgeler/<slug>/) so the two sites cross-link. */
+   and Taha Şen Yapı (/tahasenyapi/bolgeler/<slug>/) so the two sites cross-link. */
 const AREAS = [
   { slug: 'buyukcekmece', name: 'Büyükçekmece', parent: '' },
   { slug: 'gurpinar', name: 'Gürpınar', parent: 'Beylikdüzü' },
@@ -260,7 +260,7 @@ function header(active = '') {
     <div class="header-inner">
       <div class="brand-row">
         ${logo()}
-        <a class="yapi-switch" href="/yapi/" title="Taha Şen Yapı: kentsel dönüşüm, kat karşılığı ve inşaat">Taha Şen Yapı</a>
+        <a class="yapi-switch" href="/tahasenyapi/" title="Taha Şen Yapı: kentsel dönüşüm, kat karşılığı ve inşaat">Taha Şen Yapı</a>
       </div>
       <nav class="main-nav" aria-label="Ana menü">
         <ul>${navHtml}</ul>
@@ -398,7 +398,7 @@ function chrome() {
 const IDS = {
   business: `${site.domain}/#sen-parke`,
   website: `${site.domain}/#website`,
-  yapi: `${site.domain}/yapi/#taha-sen-yapi`
+  yapi: `${site.domain}/tahasenyapi/#taha-sen-yapi`
 };
 
 const OPENING = [{ '@type': 'OpeningHoursSpecification', dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'], opens: '08:00', closes: '21:00' }];

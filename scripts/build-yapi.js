@@ -1,5 +1,5 @@
 /* =========================================================
-   TAHA ŞEN YAPI — alt site (/yapi/)
+   TAHA ŞEN YAPI — alt site (/tahasenyapi/)
    Kentsel dönüşüm · kat karşılığı · sıfırdan yapı · renovasyon & restorasyon · mimari dokunuşlar ve yaşam alanı dizaynı
    Palet: #000000 · #1F150C · #412D15 · #E1DCC9
    Görseller: kamu malı (CC0/PD) fotoğraflar, marka paletine göre renklendirildi
@@ -16,7 +16,7 @@ const Y = {
   phoneHref: '+905537281755',
   person: 'Taha ŞEN',
   whatsapp: 'https://wa.me/905537281755?text=Merhaba%2C%20Taha%20%C5%9Een%20Yap%C4%B1%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum.',
-  domain: site.domain + '/yapi'
+  domain: site.domain + '/tahasenyapi'
 };
 
 const imgs = JSON.parse(fs.readFileSync(path.join(PUB, 'data', 'yapi-images.json'), 'utf8'));
@@ -137,10 +137,10 @@ const KIND_SERVICES = {
 };
 
 const P = {
-  home: '/yapi/',
-  svc: (s) => `/yapi/hizmetler/${s}/`,
-  dist: (d) => `/yapi/bolgeler/${d}/`,
-  contact: '/yapi/iletisim/'
+  home: '/tahasenyapi/',
+  svc: (s) => `/tahasenyapi/hizmetler/${s}/`,
+  dist: (d) => `/tahasenyapi/bolgeler/${d}/`,
+  contact: '/tahasenyapi/iletisim/'
 };
 
 /* ---------------------------------------------------------
@@ -302,7 +302,7 @@ function yShell({ title, description, pathName, active = '', body, bodyClass = '
   <meta name="theme-color" content="#121110">
   <link rel="icon" href="/assets/logo/tahasen-favicon-32.png" type="image/png" sizes="32x32">
   <link rel="apple-touch-icon" href="/assets/logo/tahasen-favicon-180.png">
-  <link rel="manifest" href="/yapi/site.webmanifest">
+  <link rel="manifest" href="/tahasenyapi/site.webmanifest">
   <link rel="sitemap" type="application/xml" href="/sitemap.xml">
   <script>(function(d){d.classList.add('js');try{if(matchMedia('(prefers-reduced-motion: reduce)').matches)d.classList.add('reduced');if(sessionStorage.getItem('sp-nav'))d.classList.add('is-arriving')}catch(e){}})(document.documentElement);</script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -474,7 +474,7 @@ function home() {
 
   ${ctaBand()}`;
 
-  write('yapi/index.html', yShell({ title: '', pathName: '/yapi/', body, bodyClass: 'is-home y-home' }));
+  write('tahasenyapi/index.html', yShell({ title: '', pathName: '/tahasenyapi/', body, bodyClass: 'is-home y-home' }));
 }
 
 /* ---------------------------------------------------------
@@ -528,7 +528,7 @@ function servicePages() {
       </div>
     </section>
     ${ctaBand()}`;
-    write(`yapi/hizmetler/${s.slug}/index.html`, yShell({
+    write(`tahasenyapi/hizmetler/${s.slug}/index.html`, yShell({
       title: `${s.name} — Avcılar ve İstanbul’un batısı`,
       description: `${Y.name}: ${s.lead} Avcılar, Beylikdüzü, Esenyurt, Küçükçekmece, Bakırköy ve çevresinde ${s.name.toLocaleLowerCase('tr-TR')}.`,
       pathName: P.svc(s.slug), active: s.slug, body, ogImage: im(s.img),
@@ -604,7 +604,7 @@ function districtPages() {
       </div>
     </section>
     ${ctaBand(`${loc(d.name)}ki binanız için ücretsiz ön görüşme.`)}`;
-    write(`yapi/bolgeler/${d.slug}/index.html`, yShell({
+    write(`tahasenyapi/bolgeler/${d.slug}/index.html`, yShell({
       title: `${d.name} Kentsel Dönüşüm ve Kat Karşılığı`,
       description: `${label} kentsel dönüşüm, kat karşılığı inşaat, sıfırdan yapı ve renovasyon. Güvenilir müteahhit: ${Y.name}, Avcılar merkezli; ücretsiz ön görüşme.`,
       pathName: P.dist(d.slug), active: 'bolgeler', body, ogImage: im(d.img)
@@ -660,7 +660,7 @@ function contactPage() {
       </form>
     </div>
   </section>`;
-  write('yapi/iletisim/index.html', yShell({ title: 'İletişim ve Ön Görüşme', description: `${Y.name} ile ücretsiz ön görüşme: kentsel dönüşüm, kat karşılığı, sıfırdan yapı ve renovasyon. ${Y.person} ${Y.phone}.`, pathName: P.contact, active: 'iletisim', body }));
+  write('tahasenyapi/iletisim/index.html', yShell({ title: 'İletişim ve Ön Görüşme', description: `${Y.name} ile ücretsiz ön görüşme: kentsel dönüşüm, kat karşılığı, sıfırdan yapı ve renovasyon. ${Y.person} ${Y.phone}.`, pathName: P.contact, active: 'iletisim', body }));
 }
 
 /* Preselect subject / district from the URL */

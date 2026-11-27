@@ -207,7 +207,7 @@ function areaPage(a, idx) {
   <section class="section container area-links">
     <div class="area-sibling">
       <p class="eyebrow">Binanız dönüşümde mi?</p>
-      <p>${esc(loc(a.name))} kentsel dönüşüm, kat karşılığı ve renovasyon için kardeş kuruluşumuz <a class="link-line" href="/yapi/bolgeler/${a.slug}/">Taha Şen Yapı ${esc(a.name)}</a> sayfasına bakın.</p>
+      <p>${esc(loc(a.name))} kentsel dönüşüm, kat karşılığı ve renovasyon için kardeş kuruluşumuz <a class="link-line" href="/tahasenyapi/bolgeler/${a.slug}/">Taha Şen Yapı ${esc(a.name)}</a> sayfasına bakın.</p>
     </div>
     <div>
       <p class="eyebrow">Diğer bölgeler</p>

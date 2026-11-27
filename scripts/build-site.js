@@ -401,7 +401,7 @@ const { buildYapi } = require('./build-yapi');
 const yapiPaths = buildYapi();
 const smPath = pathMod.join(__dirname, '..', 'public', 'sitemap.xml');
 const today = new Date().toISOString().slice(0, 10);
-const extra = [...parkePaths, ...yapiPaths].map(p => `  <url>\n    <loc>${site.domain}${p}</loc>\n    <lastmod>${today}</lastmod>\n    <changefreq>monthly</changefreq>\n    <priority>${p === '/yapi/' ? '0.9' : '0.8'}</priority>\n  </url>`).join('\n');
+const extra = [...parkePaths, ...yapiPaths].map(p => `  <url>\n    <loc>${site.domain}${p}</loc>\n    <lastmod>${today}</lastmod>\n    <changefreq>monthly</changefreq>\n    <priority>${p === '/tahasenyapi/' ? '0.9' : '0.8'}</priority>\n  </url>`).join('\n');
 fs.writeFileSync(smPath, fs.readFileSync(smPath, 'utf8').replace('</urlset>', extra + '\n</urlset>'));
 console.log(`Taha Şen Yapı: ${yapiPaths.length} sayfa`);
 
@@ -409,8 +409,11 @@ console.log(`Taha Şen Yapı: ${yapiPaths.length} sayfa`);
    canonical link, noindex and an instant meta refresh: Google treats this as a redirect. */
 const REDIRECTS = {
   '/parke/gulpinar/': '/parke/gurpinar/',
-  '/yapi/bolgeler/gulpinar/': '/yapi/bolgeler/gurpinar/'
+  '/yapi/bolgeler/gulpinar/': '/tahasenyapi/bolgeler/gurpinar/'
 };
+/* Taha Şen Yapı moved from /yapi/ to /tahasenyapi/ (27.11.2026): every old page points to its new address */
+fs.rmSync(pathMod.join(__dirname, '..', 'public', 'yapi'), { recursive: true, force: true });
+yapiPaths.forEach(p => { REDIRECTS[p.replace(/^\/tahasenyapi\//, '/yapi/')] = p; });
 Object.entries(REDIRECTS).forEach(([from, to]) => {
   const file = pathMod.join(__dirname, '..', 'public', from, 'index.html');
   fs.mkdirSync(pathMod.dirname(file), { recursive: true });
@@ -432,8 +435,8 @@ fs.writeFileSync(pathMod.join(__dirname, '..', 'public', 'site.webmanifest'), ma
   background_color: '#f6f5f1', theme_color: '#2e2119',
   icons: [{ src: '/assets/logo/favicon-180.png', sizes: '180x180', type: 'image/png' }, { src: '/assets/logo/favicon-512.png', sizes: '512x512', type: 'image/png' }]
 }));
-fs.writeFileSync(pathMod.join(__dirname, '..', 'public', 'yapi', 'site.webmanifest'), manifest({
-  name: 'Taha Şen Yapı — Kentsel Dönüşüm ve Kat Karşılığı', short_name: 'Taha Şen Yapı', start_url: '/yapi/', scope: '/yapi/',
+fs.writeFileSync(pathMod.join(__dirname, '..', 'public', 'tahasenyapi', 'site.webmanifest'), manifest({
+  name: 'Taha Şen Yapı — Kentsel Dönüşüm ve Kat Karşılığı', short_name: 'Taha Şen Yapı', start_url: '/tahasenyapi/', scope: '/tahasenyapi/',
   background_color: '#121110', theme_color: '#121110',
   icons: [{ src: '/assets/logo/tahasen-favicon-180.png', sizes: '180x180', type: 'image/png' }, { src: '/assets/logo/tahasen-favicon-512.png', sizes: '512x512', type: 'image/png' }]
 }));
