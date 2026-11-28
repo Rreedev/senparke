@@ -376,7 +376,7 @@ function footer() {
         <a href="${site.whatsapp}" target="_blank" rel="noopener">WhatsApp</a>
         <a href="${site.google}" target="_blank" rel="noopener">Google profilimiz (${site.rating} ★)</a>
       </div>
-      <a class="footer-credit" href="https://saviasora.dev" target="_blank" rel="noopener">Made by egsu</a>
+      <a class="footer-credit" href="https://egsudijital.com/" target="_blank" rel="noopener">Made by egsu</a>
     </div>
   </footer>
   <a class="whatsapp-float" href="${site.whatsapp}" target="_blank" rel="noopener" aria-label="WhatsApp ile yazın">${icon('whatsapp', 22)}</a>
